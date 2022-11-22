@@ -31,6 +31,7 @@ class Subreddit(db.Model):
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False, default=datetime.now)
 
     posts = db.relationship("Post", back_populates = "subreddit", cascade = "all, delete-orphan")
+    users = db.relationship("User", secondary=subreddits_users, back_populates = "subreddits")
 
 
 class Post(db.Model):
