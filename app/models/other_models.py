@@ -33,6 +33,15 @@ class Subreddit(db.Model):
     posts = db.relationship("Post", back_populates = "subreddit", cascade = "all, delete-orphan")
     users = db.relationship("User", secondary=subreddits_users, back_populates = "subreddits")
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'about': self.about,
+            'owner_id': self.owner_id,
+            'created_at': self.created_at
+        }
+
 
 class Post(db.Model):
     __tablename__ = "posts"
@@ -49,6 +58,16 @@ class Post(db.Model):
 
     comments = db.relationship("Comment", back_populates = "post", cascade = "all, delete-orphan")
     subreddit = db.relationship("Subreddit", back_populates = "posts")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'text': self.text,
+            'user_id': self.user_id,
+            'subreddit_id': self.subreddit_id,
+            'created_at': self.created_at
+        }
     
 
 class Comment(db.Model):
@@ -61,6 +80,16 @@ class Comment(db.Model):
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False, default=datetime.now)
 
     post = db.relationship("Post", back_populates = "comments")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'comment': self.comment,
+            'post_id': self.post_id,
+            'user_id': self.user_id,
+            'subreddit_id': self.subreddit_id,
+            'created_at': self.created_at
+        }
 
 
 
