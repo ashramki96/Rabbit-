@@ -24,6 +24,9 @@ subreddits_users = db.Table(
 class Subreddit(db.Model):
     __tablename__ = "subreddits"
 
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA} 
+
     id = db.Column(db.Integer, primary_key = True)
     name = db.Column(db.String(100), nullable = False)
     about = db.Column(db.String(10000), nullable = False)
@@ -46,8 +49,8 @@ class Subreddit(db.Model):
 class Post(db.Model):
     __tablename__ = "posts"
 
-    # if environment == "production":
-    #     __table_args__ = {'schema': SCHEMA} do i need this for all tables??
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA} 
 
     id = db.Column(db.Integer, primary_key = True)
     title = db.Column(db.String(2000), nullable = False)
@@ -72,6 +75,9 @@ class Post(db.Model):
 
 class Comment(db.Model):
     __tablename__ = "comments"
+
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA} 
 
     id = db.Column(db.Integer, primary_key = True)
     comment = db.Column(db.String(10000), nullable = False)
