@@ -7,13 +7,13 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-comment_bp = Blueprint("comment_routes", __name__, url_prefixes = "/api/comments")
+comment_bp = Blueprint("comment_routes", __name__, url_prefix = "/api/comments")
 
 # Get all comments
-@comment_bp.route("/", method = ['GET'])
+@comment_bp.route("/", methods = ['GET'])
 def get_all_comments():
     all_comments = Comment.query.all()
-    response = {}
+    response = []
 
     if all_comments:
         for comment in all_comments:

@@ -87,7 +87,6 @@ class Comment(db.Model):
             'comment': self.comment,
             'post_id': self.post_id,
             'user_id': self.user_id,
-            'subreddit_id': self.subreddit_id,
             'created_at': self.created_at
         }
 
