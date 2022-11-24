@@ -1,0 +1,124 @@
+.profile-button-container{
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    padding: 5px;
+    border-style: solid;
+    border-color: rgb(216, 214, 214);
+    border-width: thin;
+    border-radius: 0px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.actual-button{
+    border:none;
+    background-color: white;
+    border-radius: 0px;
+}
+
+.fa-solid{
+    /* color:rgb(189, 46, 196); */
+    padding:7px;
+}
+
+.dropdown-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 135px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 5;
+    top: 75%;
+    border-radius: 0px;
+    right: 11%;
+}
+
+
+.username-container:hover{
+    background-color: rgb(11, 58,13);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 0px;
+}
+
+.log-out{
+    padding: 5px
+}
+
+.log-out:hover{
+    background-color: rgb(11, 58,13);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 0px;
+}
+
+.my-spots{
+    padding: 5px;
+}
+
+.my-reviews{
+    padding: 5px;
+}
+
+.my-reviews:hover{
+    background-color: rgb(11, 58,13);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 0px;
+}
+
+
+.my-spots:hover{
+    background-color: rgb(11, 58,13);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 0px;
+}
+
+#pink:hover{
+    color: rgb(11, 58,13)
+}
+
+.sign-up-text{
+    padding: 5px;
+}
+
+.sign-up-text:hover{
+    background-color: rgb(11, 58,13);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 0px;
+}
+
+.log-in-text{
+    padding: 5px;
+}
+
+.log-in-text:hover{
+    background-color: rgb(11, 58,13);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 0px;
+}
