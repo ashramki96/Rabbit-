@@ -35,13 +35,15 @@ function SignupForm() {
 
   return (
     <>
+    <div className="Outer-modal-Container">
+    <div className="Inner-modal-Container">
     <h2 className = "title">Sign up</h2>
     <form onSubmit={handleSubmit} className = "formContainer">
       <div className = 'errors'>
         {errors.map((error, idx) => <div>{error}</div>)}
         </div>
       
-        <input
+        {/* <input
         placeholder = "First Name"
           type="text"
           value={firstName}
@@ -57,11 +59,11 @@ function SignupForm() {
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           required
-        />
+        /> */}
       
       
         
-        <input
+        <input className="form-inputs"
         placeholder = "Email"
           type="text"
           value={email}
@@ -70,7 +72,7 @@ function SignupForm() {
         />
       
       
-        <input
+        <input className="form-inputs"
         placeholder = "Username"
           type="text"
           value={username}
@@ -79,7 +81,7 @@ function SignupForm() {
         />
       
       
-        <input
+        <input className="form-inputs"
         placeholder = "Password"
           type="password"
           value={password}
@@ -88,7 +90,7 @@ function SignupForm() {
         />
       
       
-        <input
+        <input className="form-inputs"
         placeholder = "Confirm Password"
           type="password"
           value={confirmPassword}
@@ -98,6 +100,8 @@ function SignupForm() {
       
       <button className = "signupButton" type="submit">Sign Up</button>
     </form>
+    </div>
+    </div>
     </>
   );
 }

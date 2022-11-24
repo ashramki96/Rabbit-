@@ -1,15 +1,14 @@
 * {-webkit-font-smoothing: antialiased;}
 
 .navbar-main{
+
 display: flex;
-flex-direction: row;
-/* position: sticky; this is suppose to maintain the container stuck to thee top but not working */
-border-color: rgb(164, 165, 165);
-border-bottom-style: solid;
-justify-content: center;
-position:sticky;
-z-index:4;
-top:0px;
+justify-content: space-between;
+align-items: center;
+height: 38px;
+border-bottom: #D3D3D3 1px solid;
+position: sticky;
+top: 0px;
 background-color: white;
 }
 
@@ -19,7 +18,7 @@ background-color: white;
     justify-content: space-between;
     /* border-color: grey; */
     /* border-style: solid; */
-    width:80%;
+    width:100%;
 }
 
 
@@ -41,13 +40,6 @@ background-color: white;
     display: flex;
 }
 
-.Create-a-spot-Button{
-    display: flex;
-
-/* border-color: rgb(255, 0, 144);
-    border-style: solid; */
-}
-
 .logged-out-profile-container{
     display: flex;
     justify-content: flex-end;
@@ -61,27 +53,8 @@ background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* margin-right: 300px; */
-    /* border-color: rgb(255, 0, 144);
-    border-style: solid; */
     width: 25%;
     justify-content: space-between;
 
 }
 
-.become-host-button{
-    background-color: white;
-    color: rgb(11, 58,13);
-    border-radius:0px;
-    padding: 15px;
-    font-size: larger;
-    border: 0 solid #ddd;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.become-host-button:hover{
-    background-color: rgb(11, 58,13);
-    color: white;
-    border: none;
-}

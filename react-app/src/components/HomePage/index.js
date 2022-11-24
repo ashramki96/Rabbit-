@@ -13,8 +13,22 @@ const HomePage = () => {
         dispatch(loadAllPosts())
     }, [dispatch])
 
+    const allPosts = useSelector(state => Object.values(state.posts))
+    if(!allPosts) return null
+    console.log("ALL POSTS IS", allPosts)
+
     return (
+        <div>
         <h1>Welcome to Rabbit!</h1>
+        <h2>Timeline</h2>
+        {allPosts.map(post => {
+            return (<div>
+            <h4>{post.title}</h4>
+            <div>{post.text}</div>
+            </div>
+            )
+        })}
+        </div>
     )
 }
 
