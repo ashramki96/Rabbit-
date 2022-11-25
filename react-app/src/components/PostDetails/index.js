@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect , useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
 import { loadAllPosts } from '../../store/post';
+import { createNewComment } from '../../store/comment';
 import "./PostDetails.css"
 
 const PostDetails = () => {
@@ -11,19 +12,38 @@ const PostDetails = () => {
     let {postId} = useParams();
     postId = parseInt(postId)
 
+    
+    const [comment, setComment] = useState("")
+
     useEffect(() => {
         dispatch(loadAllComments())
         dispatch(loadAllPosts())
     }, [dispatch])
 
+   
+
     const allPosts = useSelector(state => Object.values(state.posts))
     const allComments = useSelector(state => Object.values(state.comments))
+    let sessionUser = useSelector(state => state.session.user)
     if(!allPosts) return null
     if(!allComments) return null
     const post = allPosts.filter(post => post.id === postId)[0]
     const comments = allComments.filter(comment => comment.post_id === postId)
     console.log("current post", post)
     console.log("comments for post", comments)
+
+    const createComment = (e) => setComment(e.target.value)
+
+    const handleCommentSubmit = async (e) => {
+
+        const commentPayload = {
+            comment
+        }
+
+        const createdComment = await dispatch(createNewComment(commentPayload, sessionUser.id, postId))
+            .then (() => dispatch(loadAllComments))
+            .then (() => dispatch(loadAllPosts))
+    }
     
     return(
     <div className = "outerPostContainer">
@@ -33,10 +53,12 @@ const PostDetails = () => {
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
                 <h4>Comments:</h4>
-                <form className = "comment-form">
+
+                {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
                     <textarea></textarea>
                     <div className = "comment-submit"><input type="submit" value="Submit"></input></div>
-                </form>
+                </form> : null}
+
                 {comments.map(comment => {
                     return(
                         <div className = "innerCommentContainer">

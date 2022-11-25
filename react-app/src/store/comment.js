@@ -40,8 +40,9 @@ export const loadAllComments = () => async dispatch => {
     }
 }
 
-export const createNewComment = (payload) => async dispatch => {
-    const response = await csrfFetch(`/api/comments/${payload.user_id}/${payload.post_id}`, {
+export const createNewComment = (payload, userId, postId) => async dispatch => {
+
+    const response = await csrfFetch(`/api/comments/${userId}/${postId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
