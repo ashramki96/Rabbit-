@@ -1,0 +1,17 @@
+.innerCommentContainer{
+    border: black 1px dotted;
+    padding: 15px;
+    margin: 20px;
+    width: 90%;
+}
+
+textarea {
+    resize: none;
+    margin: 20px;
+    width: 90% ;
+    height: 100px;
+  }
+
+  /* .comment-submit { 
+    margin-right: 67px;
+  } */

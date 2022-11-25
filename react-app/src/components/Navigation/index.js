@@ -41,8 +41,8 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
       <div className= "logged-out-profile-container">
-      <div className="sign-up-text" style={{ zIndex: 3 }} onClick={() => setShowSignUpModal(true)}>Sign Up</div>
-      <div className="log-in-text" style={{ zIndex: 3 }} onClick={() => setShowLogInModal(true)}>Log In</div>
+      <div className="sign-up-button" style={{ zIndex: 3 }} onClick={() => setShowSignUpModal(true)}><div className = "sign-up-text" >Sign Up</div></div>
+      <div className="log-in-button" style={{ zIndex: 3 }} onClick={() => setShowLogInModal(true)}><div className = "log-in-text" >Log In</div></div>
       </div>
       {showSignUpModal && (
           <Modal onClose={() => setShowSignUpModal(false)}>
@@ -65,7 +65,7 @@ function Navigation({ isLoaded }){
     <div className="navbar-main">
       <div className="navbar-inner-container">
     <div className= "Home-Container">
-        <NavLink exact to="/">Rabbit</NavLink>
+        <NavLink exact to="/"><img className = "logo" src = "https://i.ibb.co/R95Mq7j/reddit-logo.png"/></NavLink>
     </div>
 
     <div className="Right-Side-Container">

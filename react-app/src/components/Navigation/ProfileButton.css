@@ -96,29 +96,35 @@
 }
 
 .sign-up-text{
-    padding: 5px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
 }
 
-.sign-up-text{
-    background-color: rgb(11, 58,13);
+.log-in-text {
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.log-in-button{
+    background-color: rgb(38, 118, 210);
     color: white;
     border: none;
     cursor: pointer;
-    /* padding: 5px; */
-    width:125px;
-    border-radius: 0px;
+    padding:5px;
+    width:100px;
+    border-radius: 17px;
+    margin-left: 12px;
 }
 
-.log-in-text{
-    padding: 5px;
-}
 
-.log-in-text{
-    background-color: rgb(11, 58,13);
-    color: white;
-    border: none;
+
+.sign-up-button{
+    color: rgb(38, 118, 210);
+    border: 1px rgb(38, 118, 210) solid;
     cursor: pointer;
-    /* padding: 5px; */
-    width:125px;
-    border-radius: 0px;
+    padding:5px;
+    width:100px;
+    border-radius: 17px;
 }

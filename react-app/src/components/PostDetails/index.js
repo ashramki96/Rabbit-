@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
 import { loadAllPosts } from '../../store/post';
+import "./PostDetails.css"
 
 const PostDetails = () => {
     const dispatch = useDispatch();
@@ -29,11 +30,17 @@ const PostDetails = () => {
         
         <div>
             <div className="innerPostContainer">
-                <h4>{post?.title}</h4>
+                <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
+                <h4>Comments:</h4>
+                <form className = "comment-form">
+                    <textarea></textarea>
+                    <div className = "comment-submit"><input type="submit" value="Submit"></input></div>
+                </form>
                 {comments.map(comment => {
                     return(
-                        <div>
+                        <div className = "innerCommentContainer">
+                            <div><strong>{comment?.user.username}</strong></div>
                             {comment?.comment}
                         </div>
                     )
