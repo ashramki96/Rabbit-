@@ -58,7 +58,7 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable = False)
     subreddit_id = db.Column(db.Integer, db.ForeignKey("subreddits.id"), nullable = False)
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False, default=datetime.now)
-
+    user = db.relationship("User", back_populates = "posts")
     comments = db.relationship("Comment", back_populates = "post", cascade = "all, delete-orphan")
     subreddit = db.relationship("Subreddit", back_populates = "posts")
 
@@ -69,7 +69,8 @@ class Post(db.Model):
             'text': self.text,
             'user_id': self.user_id,
             'subreddit_id': self.subreddit_id,
-            'created_at': self.created_at
+            'created_at': self.created_at,
+            'user': self.user.to_dict() if self.user else None
         }
     
 
@@ -84,7 +85,7 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable = False)
     post_id = db.Column(db.Integer, db.ForeignKey("posts.id"), nullable = False)
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False, default=datetime.now)
-
+    user = db.relationship("User", back_populates = "comments")
     post = db.relationship("Post", back_populates = "comments")
 
     def to_dict(self):
@@ -93,7 +94,8 @@ class Comment(db.Model):
             'comment': self.comment,
             'post_id': self.post_id,
             'user_id': self.user_id,
-            'created_at': self.created_at
+            'created_at': self.created_at,
+            'user': self.user.to_dict() if self.user else None
         }
 
 

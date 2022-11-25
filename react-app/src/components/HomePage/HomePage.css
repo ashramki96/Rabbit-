@@ -1,0 +1,15 @@
+.outerPostContainer {
+    margin: auto;
+    justify-content: flex;
+    align-items: center;
+    /* border: red 1px solid; */
+    width: 60%;
+}
+
+.innerPostContainer {
+    border: black 1px dotted;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px;
+
+}

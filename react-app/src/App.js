@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage"
 import * as sessionActions from "./store/session";
 import MyProfile from './components/MyProfile';
+import PostDetails from './components/PostDetails';
 
 
 
@@ -28,6 +29,10 @@ function App() {
         <Route path='/myprofile' exact={true} >
           <MyProfile />
         </Route>
+        <Route path='/posts/:postId' exact={true} >
+          <PostDetails />
+        </Route>
+
       </Switch>
     </>
   );
