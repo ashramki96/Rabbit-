@@ -5,6 +5,7 @@ import { loadAllComments} from '../../store/comment';
 import { loadAllPosts } from '../../store/post';
 import { createNewComment, deleteComment, editComment } from '../../store/comment';
 import "./EditComment.css"
+import { $CombinedState } from 'redux';
 
 
 const EditComment = ({currComment}) => {
@@ -46,14 +47,16 @@ const EditComment = ({currComment}) => {
         <>
         <div className = "editButton" onClick = {() => setShowEditBox(true)}>Edit</div>
         {showEditBox && (
-          
+            <div className = "editForm">
             <form onSubmit={handleCommentEdit} onChange = {editSaidComment} className = "edit-comment-form">
                 
          <textarea>{currComment.comment}</textarea>
-         <button onClick = {() => setShowEditBox(false)}> Cancel </button>
+         
          <div className = "edit-comment-submit"><input type="submit" value="Submit"></input></div>
+         <button onClick = {() => setShowEditBox(false)}> Cancel </button>
         
          </form>
+         </div>
          
           
     )
