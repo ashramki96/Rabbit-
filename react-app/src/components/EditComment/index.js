@@ -4,6 +4,7 @@ import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
 import { loadAllPosts } from '../../store/post';
 import { createNewComment, deleteComment, editComment } from '../../store/comment';
+import "./EditComment.css"
 
 
 const EditComment = ({currComment}) => {
@@ -15,13 +16,15 @@ const EditComment = ({currComment}) => {
     console.log("edit comment component postid is", postId)
     console.log("curr comment is !!!! is", currComment)
 
+    const [showEditBox, setShowEditBox] = useState(false)
+    const [comment, setComment] = useState("")
+
     useEffect(() => {
         dispatch(loadAllComments())
         dispatch(loadAllPosts())
     }, [dispatch])
 
-    const [showEditBox, setShowEditBox] = useState(false)
-    const [comment, setComment] = useState("")
+  
 
     const editSaidComment = (e) => setComment(e.target.value)
 
@@ -43,12 +46,18 @@ const EditComment = ({currComment}) => {
         <>
         <div className = "editButton" onClick = {() => setShowEditBox(true)}>Edit</div>
         {showEditBox && (
+          
             <form onSubmit={handleCommentEdit} onChange = {editSaidComment} className = "edit-comment-form">
                 
-         <textarea></textarea>
+         <textarea>{currComment.comment}</textarea>
+         <button onClick = {() => setShowEditBox(false)}> Cancel </button>
          <div className = "edit-comment-submit"><input type="submit" value="Submit"></input></div>
+        
          </form>
-        )}
+         
+          
+    )
+}
         </>
     )
 

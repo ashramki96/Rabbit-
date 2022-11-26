@@ -76,8 +76,10 @@ const PostDetails = () => {
                         <div className = "innerCommentContainer">
                             <div><strong>{comment?.user.username}</strong></div>
                             {comment?.comment}
+                            <br></br>
                            <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div>
-                          <div><EditComment currComment = {comment}/></div>
+                           <div className = "editCommentComponent"><EditComment currComment = {comment}/></div>
+                          
                         </div>
                     )
                 })}

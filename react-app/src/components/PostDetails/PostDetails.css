@@ -23,3 +23,9 @@ textarea {
     color: grey;
     cursor: pointer;
   }
+
+  .editCommentComponent {
+    display: inline-block;
+  }
+
+  
