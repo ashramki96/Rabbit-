@@ -31,7 +31,6 @@ const HomePage = () => {
                                 <div className="innerPostContainer">
                                     <h4>{post.title}</h4>
                                     <div>{post.text}</div>
-
                                 </div>
                             </NavLink>
                         </div>

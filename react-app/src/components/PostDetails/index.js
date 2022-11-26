@@ -15,11 +15,18 @@ const PostDetails = () => {
 
     
     const [comment, setComment] = useState("")
+    const [validationErrors, setValidationErrors] = useState([])
+
+
 
     useEffect(() => {
         dispatch(loadAllComments())
         dispatch(loadAllPosts())
-    }, [dispatch])
+
+        const errors = []
+        if(comment.length === 0) errors.push("Please enter a comment")
+        setValidationErrors(errors)
+    }, [dispatch, comment])
 
    
 
@@ -67,8 +74,8 @@ const PostDetails = () => {
                 <h4>Comments:</h4>
                 
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
-                    <textarea></textarea>
-                    <div className = "comment-submit"><input type="submit" value="Submit"></input></div>
+                    <textarea placeholder="What are your thoughts?" required></textarea>
+                    <div className = "comment-submit"><input type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
                 </form> : null}
 
                 {comments.slice(0).reverse().map(comment => {
@@ -77,8 +84,8 @@ const PostDetails = () => {
                             <div><strong>{comment?.user.username}</strong></div>
                             {comment?.comment}
                             <br></br>
-                           <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div>
-                           <div className = "editCommentComponent"><EditComment currComment = {comment}/></div>
+                           {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div> : null}
+                           {sessionUser && sessionUser.id === comment.user_id ? <div className = "editCommentComponent"><EditComment currComment = {comment}/></div> : null}
                           
                         </div>
                     )

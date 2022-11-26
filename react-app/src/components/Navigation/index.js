@@ -41,22 +41,23 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
       <div className= "logged-out-profile-container">
-      <div className="sign-up-button" style={{ zIndex: 3 }} onClick={() => setShowSignUpModal(true)}><div className = "sign-up-text" >Sign Up</div></div>
-      <div className="log-in-button" style={{ zIndex: 3 }} onClick={() => setShowLogInModal(true)}><div className = "log-in-text" >Log In</div></div>
+      <div className="sign-up-button"  onClick={() => setShowSignUpModal(true)}><div className = "sign-up-text" >Sign Up</div></div>
+      <div className="log-in-button"  onClick={() => setShowLogInModal(true)}><div className = "log-in-text" >Log In</div></div>
       </div>
       {showSignUpModal && (
           <Modal onClose={() => setShowSignUpModal(false)}>
             <SignupForm />
 
           </Modal>
+        
         )}
         {showLogInModal && (
           <Modal onClose={() => setShowLogInModal(false)}>
-
             <LoginForm />
           </Modal>
+          
         )}
-        {/* <ProfileButton /> */}
+        
       </>
     );
   }

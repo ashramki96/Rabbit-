@@ -14,6 +14,7 @@ const EditComment = ({currComment}) => {
     let {postId} = useParams();
     postId = parseInt(postId)
 
+
     console.log("edit comment component postid is", postId)
     console.log("curr comment is !!!! is", currComment)
 
