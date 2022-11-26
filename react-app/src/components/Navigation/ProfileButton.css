@@ -2,7 +2,7 @@
     display: inline-block;
     position: relative;
     justify-content: center;
-    padding: 5px;
+    /* padding: 2px; */
     border-style: solid;
     border-color: rgb(216, 214, 214);
     border-width: thin;
@@ -32,7 +32,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     z-index: 5;
-    top: 75%;
+    top: 85%;
     border-radius: 0px;
     right: 11%;
 }
@@ -70,26 +70,6 @@
     padding: 5px;
 }
 
-.my-reviews:hover{
-    background-color: rgb(11, 58,13);
-    color: white;
-    border: none;
-    cursor: pointer;
-    /* padding: 5px; */
-    width:125px;
-    border-radius: 0px;
-}
-
-
-.my-spots:hover{
-    background-color: rgb(11, 58,13);
-    color: white;
-    border: none;
-    cursor: pointer;
-    /* padding: 5px; */
-    width:125px;
-    border-radius: 0px;
-}
 
 #pink:hover{
     color: rgb(11, 58,13)

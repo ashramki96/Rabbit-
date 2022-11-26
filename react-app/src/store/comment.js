@@ -58,9 +58,9 @@ export const createNewComment = (payload, userId, postId) => async dispatch => {
     }
 }
 
-export const editComment = (payload) => async dispatch => {
+export const editComment = (commentId, payload) => async dispatch => {
 
-    const response = await csrfFetch(`/api/comments/${payload.id}/`, {
+    const response = await csrfFetch(`/api/comments/${commentId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -75,15 +75,15 @@ export const editComment = (payload) => async dispatch => {
     }
 }
 
-export const deleteComment = (payload) => async dispatch => {
-    const response = await csrfFetch(`/api/comments/${payload.id}`, {
+export const deleteComment = (commentId) => async dispatch => {
+    const response = await csrfFetch(`/api/comments/${commentId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         }
     })
     if(response.ok){
-        dispatch(removeComment(payload.id))
+        dispatch(removeComment(commentId))
         return response
     }
 }

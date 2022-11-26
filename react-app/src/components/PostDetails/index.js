@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
 import { loadAllPosts } from '../../store/post';
-import { createNewComment } from '../../store/comment';
+import { createNewComment, deleteComment } from '../../store/comment';
 import "./PostDetails.css"
+import EditComment from '../EditComment';
 
 const PostDetails = () => {
     const dispatch = useDispatch();
@@ -25,8 +26,10 @@ const PostDetails = () => {
     const allPosts = useSelector(state => Object.values(state.posts))
     const allComments = useSelector(state => Object.values(state.comments))
     let sessionUser = useSelector(state => state.session.user)
+
     if(!allPosts) return null
     if(!allComments) return null
+
     const post = allPosts.filter(post => post.id === postId)[0]
     const comments = allComments.filter(comment => comment.post_id === postId)
     console.log("current post", post)
@@ -44,7 +47,16 @@ const PostDetails = () => {
             .then (() => dispatch(loadAllComments))
             .then (() => dispatch(loadAllPosts))
     }
+
+    const handleCommentDelete = async (commentId) => {
+       
+        await dispatch(deleteComment(commentId))
+            .then(() => dispatch(loadAllComments))
+            .then(() => dispatch(loadAllPosts))
+    }
+
     
+
     return(
     <div className = "outerPostContainer">
         
@@ -53,17 +65,19 @@ const PostDetails = () => {
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
                 <h4>Comments:</h4>
-
+                
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
                     <textarea></textarea>
                     <div className = "comment-submit"><input type="submit" value="Submit"></input></div>
                 </form> : null}
 
-                {comments.map(comment => {
+                {comments.slice(0).reverse().map(comment => {
                     return(
                         <div className = "innerCommentContainer">
                             <div><strong>{comment?.user.username}</strong></div>
                             {comment?.comment}
+                           <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div>
+                          <div><EditComment currComment = {comment}/></div>
                         </div>
                     )
                 })}
