@@ -32,7 +32,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
       <div className= "profile-button">
-      <ProfileButton user={sessionUser}/>
+      <ProfileButton user={sessionUser} setShowSignUpModal = {setShowSignUpModal} setShowLogInModal = {setShowLogInModal}/>
       </div>
       </>
 

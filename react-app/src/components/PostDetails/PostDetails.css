@@ -26,7 +26,10 @@ textarea {
   }
 
   .editCommentComponent {
-    display: inline-block;
+    padding-left: 10px;
   }
 
-  
+  .deleteEditContainer {
+    display: flex;
+    flex-direction: row;
+  }

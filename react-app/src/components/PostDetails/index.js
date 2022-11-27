@@ -84,9 +84,10 @@ const PostDetails = () => {
                             <div><strong>{comment?.user.username}</strong></div>
                             {comment?.comment}
                             <br></br>
-                           {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div> : null}
+                            <div className = "deleteEditContainer">
+                           {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete   </div> : null}
                            {sessionUser && sessionUser.id === comment.user_id ? <div className = "editCommentComponent"><EditComment currComment = {comment}/></div> : null}
-                          
+                            </div>
                         </div>
                     )
                 })}

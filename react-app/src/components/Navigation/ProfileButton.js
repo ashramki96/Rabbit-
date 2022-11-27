@@ -11,12 +11,12 @@ import LoginForm from '../LoginFormModal/LoginForm'
 
 import './ProfileButton.css'
 
-function ProfileButton({ user }) {
+function ProfileButton({ user, setShowLogInModal, setShowSignUpModal }) {
   const dispatch = useDispatch();
   const history = useHistory()
   const [showMenu, setShowMenu] = useState(false);
-  const [showSignUpModal, setShowSignUpModal] = useState(false);
-  const [showLogInModal, setShowLogInModal] = useState(false);
+  // const [showSignUpModal, setShowSignUpModal] = useState(false);
+  // const [showLogInModal, setShowLogInModal] = useState(false);
 
   const openMenu = () => {
     if (showMenu) return;
@@ -40,7 +40,10 @@ function ProfileButton({ user }) {
 
   const logout =  (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout()).then(()=>history.push("/"));
+    dispatch(sessionActions.logout())
+    setShowLogInModal(false)
+    setShowSignUpModal(false)
+    history.push("/")
   };
 
   const myprofile = (e) => {

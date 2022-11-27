@@ -3,3 +3,9 @@
     color: grey;
     cursor: pointer;
 }
+
+.submitCancelContainer{
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+}

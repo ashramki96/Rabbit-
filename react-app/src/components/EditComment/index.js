@@ -52,10 +52,11 @@ const EditComment = ({currComment}) => {
             <form onSubmit={handleCommentEdit} onChange = {editSaidComment} className = "edit-comment-form">
                 
          <textarea>{currComment.comment}</textarea>
-         
+         <div className = "submitCancelContainer">
          <div className = "edit-comment-submit"><input type="submit" value="Submit"></input></div>
          <button onClick = {() => setShowEditBox(false)}> Cancel </button>
-        
+         </div>
+
          </form>
          </div>
          
