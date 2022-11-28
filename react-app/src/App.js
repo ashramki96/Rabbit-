@@ -21,7 +21,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
+    <div className = "page-container">
       <Navigation isLoaded={isLoaded} />
       <Switch>
         <Route path='/' exact={true} >
@@ -38,7 +38,17 @@ function App() {
         </Route>
 
       </Switch>
-    </>
+      <footer className="footer">
+          <div className="footer-about">
+            <strong>Rabbit, a clone of Reddit. By Ashwin Ramakrishnan</strong>
+          </div>
+          <div className="footer-links">
+            <a id="github" className="links-github" href="https://github.com/jameswonlee/CodeBunny">
+              <i className="fa-brands fa-github fa-xl"></i>
+            </a>
+          </div>
+      </footer>
+    </div>
   );
 }
 
