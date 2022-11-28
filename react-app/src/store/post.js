@@ -76,15 +76,15 @@ export const editPost = (payload, postId) => async dispatch => {
     }
 }
 
-export const deletePost = (payload) => async dispatch => {
-    const response = await csrfFetch(`/api/posts/${payload.id}`, {
+export const deletePost = (postId) => async dispatch => {
+    const response = await csrfFetch(`/api/posts/${postId}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
         }
     })
     if(response.ok){
-        dispatch(removePost(payload.id))
+        dispatch(removePost(postId))
         return response
     }
 }

@@ -9,6 +9,14 @@ const GET_COMMENTS = 'comments/getAllComments'
 const CREATE_COMMENT = 'comments/createComment'
 const UPDATE_COMMENT = 'comments/updateComment'
 const DELETE_COMMENT = 'comments/deleteComment'
+const CLEAR_COMMENTS = 'comments/clearComments'
+
+//to fix the delete cascade issue where when a post is deleted, it's comments arent deleted without refresh
+export const clearAllComments = () => {
+    return {
+        type: CLEAR_COMMENTS
+    }
+}
 
 const getAllComments = comments => ({
     type: GET_COMMENTS,
@@ -29,6 +37,8 @@ const removeComment = commentId => ({
     type: DELETE_COMMENT,
     payload: commentId
 })
+
+
 
 //************************************ THUNKS **********************************
 
@@ -129,6 +139,9 @@ const commentReducer = (state = initialState, action) => {
             delete newState[action.payload]
             return newState
             // *****************************************************************************
+        case CLEAR_COMMENTS:
+            return {}
+
         default:
             return state
 

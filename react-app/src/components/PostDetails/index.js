@@ -2,8 +2,8 @@ import React, { useEffect , useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
-import { loadAllPosts } from '../../store/post';
-import { createNewComment, deleteComment } from '../../store/comment';
+import { deletePost, loadAllPosts } from '../../store/post';
+import { createNewComment, deleteComment, clearAllComments} from '../../store/comment';
 import "./PostDetails.css"
 import EditComment from '../EditComment';
 import EditPost from '../EditPost';
@@ -63,6 +63,13 @@ const PostDetails = () => {
             .then(() => dispatch(loadAllPosts))
     }
 
+    const handlePostDelete = async () => {
+        await dispatch(clearAllComments())
+        await dispatch(deletePost(postId))
+        .then(() => dispatch(loadAllComments))
+        .then(() => dispatch(loadAllPosts))
+        history.push("/")
+    }
     
 
     return(
@@ -72,7 +79,8 @@ const PostDetails = () => {
             <div className="innerPostContainer">
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
-                <EditPost currPost = {post}/>
+                {sessionUser?.id === post?.user_id ? <div className = "deleteButton" onClick = {() => handlePostDelete(comment?.id)}>Delete   </div> : null}
+                {sessionUser?.id === post?.user_id ? <EditPost currPost = {post}/> : null}
                 <h4>Comments:</h4>
                 
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
