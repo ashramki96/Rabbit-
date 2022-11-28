@@ -15,6 +15,7 @@ const HomePage = () => {
     }, [dispatch])
 
     const allPosts = useSelector(state => Object.values(state.posts))
+    const sessionUser = useSelector(state => state.session.user)
     if(!allPosts) return null
     console.log("ALL POSTS IS", allPosts)
 
@@ -22,7 +23,10 @@ const HomePage = () => {
         <div>
         <h1>Welcome to Rabbit!</h1>
         <h2>Timeline</h2>
-        <div className = "outerPostContainer">
+        {sessionUser ? <div className = "createPostContainer">
+         <div className = "createPostButton" onClick = {() => history.push("/createpost")}>Create Post</div>
+        </div> : null}
+        <div className = "outerPostContainer"> 
         
                 {allPosts.map(post => {
                     return (

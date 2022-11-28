@@ -42,8 +42,8 @@ export const loadAllPosts = () => async dispatch => {
     }
 }
 
-export const createNewPost = (payload) => async dispatch => {
-    const response = await csrfFetch(`/api/posts/${payload.user_id}/${payload.subreddit_id}`, {
+export const createNewPost = (payload, subredditId, user_id) => async dispatch => {
+    const response = await csrfFetch(`/api/posts/${user_id}/${subredditId}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

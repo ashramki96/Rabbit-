@@ -13,3 +13,17 @@
     margin: 20px;
 
 }
+
+
+.createPostButton{
+    background-color: #FF4301;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:5px;
+    width:100px;
+    border-radius: 17px;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+}

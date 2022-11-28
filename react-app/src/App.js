@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage"
 import * as sessionActions from "./store/session";
 import MyProfile from './components/MyProfile';
 import PostDetails from './components/PostDetails';
+import CreatePost from './components/CreatePost';
 
 
 
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route path='/posts/:postId' exact={true} >
           <PostDetails />
+        </Route>
+        <Route path = '/createpost' exact = {true}>
+          <CreatePost/>
         </Route>
 
       </Switch>
