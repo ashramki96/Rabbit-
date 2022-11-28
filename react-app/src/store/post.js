@@ -59,9 +59,9 @@ export const createNewPost = (payload, subredditId, user_id) => async dispatch =
     }
 }
 
-export const editPost = (payload) => async dispatch => {
+export const editPost = (payload, postId) => async dispatch => {
 
-    const response = await csrfFetch(`/api/posts/${payload.id}/`, {
+    const response = await csrfFetch(`/api/posts/${postId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

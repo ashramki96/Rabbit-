@@ -6,6 +6,7 @@ import { loadAllPosts } from '../../store/post';
 import { createNewComment, deleteComment } from '../../store/comment';
 import "./PostDetails.css"
 import EditComment from '../EditComment';
+import EditPost from '../EditPost';
 
 const PostDetails = () => {
     const dispatch = useDispatch();
@@ -71,6 +72,7 @@ const PostDetails = () => {
             <div className="innerPostContainer">
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
+                <EditPost currPost = {post}/>
                 <h4>Comments:</h4>
                 
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">

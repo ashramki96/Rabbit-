@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, url_for, redirect, request, jsonif
 from ..models import User, Subreddit, Post, Comment, db
 from ..forms.create_post import CreatePost
 from flask_login import current_user, login_user, logout_user, login_required
-from ..forms.create_post import CreatePost
+from ..forms.edit_post import EditPost
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -50,14 +50,14 @@ def create_post(user_id, subreddit_id):
 @post_bp.route("/<int:post_id>", methods = ['PUT'])
 def edit_post(post_id):
 
-    edit_post_form = CreatePost()
+    edit_post_form = EditPost()
     edit_post_form['csrf_token'].data = request.cookies['csrf_token']
 
     if edit_post_form.validate_on_submit():
         data = edit_post_form.data
         edited_post = Post.query.get(post_id)
 
-        edited_post.title = data["title"]
+        # edited_post.title = data["title"]
         edited_post.text = data["text"]
 
         db.session.commit()
