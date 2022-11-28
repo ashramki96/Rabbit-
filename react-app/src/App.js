@@ -45,7 +45,7 @@ function App() {
             <strong>Rabbit, a clone of Reddit. By Ashwin Ramakrishnan</strong>
           </div>
           <div className="footer-links">
-            <a id="github" className="links-github" href="https://github.com/jameswonlee/CodeBunny">
+            <a id="github" className="links-github" href="https://github.com/ashramki96/Rabbit-">
               <i className="fa-brands fa-github fa-xl"></i>
             </a>
           </div>

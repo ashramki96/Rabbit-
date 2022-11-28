@@ -1,10 +1,12 @@
 .Demo-Button{
     width:100%;
-    background-color: rgb(11, 58,13);
+    background-color: #FF4301;
     color: white;
-    border-radius:0px;
+    border-radius:20px;
     border-width: thin;
     padding:10px;
     margin-bottom: 5%;
     border: none;
+    font-weight: bold;
+    font-size: 13px;
 }

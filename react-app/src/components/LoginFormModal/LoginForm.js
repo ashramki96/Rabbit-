@@ -45,7 +45,7 @@ function LoginForm() {
       </div>
         <div className="inner-form-sign-container">
       <label>
-        Email
+        
         <input
         className="form-inputs"
           type="text"
@@ -58,7 +58,6 @@ function LoginForm() {
       </div>
       <div className="Password-Container">
       <label>
-        Password
         <input
         className="form-inputs"
           type="password"
