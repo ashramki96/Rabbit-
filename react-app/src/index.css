@@ -29,7 +29,7 @@ li, a, button, div {
     left: 0;
     width: 100%;
     height: 40px;   /* Height of the footer */
-    background: #FF4301
+    background: #FF4301;
  }
 
  .footer-about {
@@ -48,6 +48,10 @@ li, a, button, div {
 .links-github {
     text-decoration: none;
     color: black;
+}
+
+.page-container{
+    margin-bottom: 60px;
 }
 
 

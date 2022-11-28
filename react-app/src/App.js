@@ -21,6 +21,7 @@ function App() {
   }, [dispatch]);
 
   return (
+    <>
     <div className = "page-container">
       <Navigation isLoaded={isLoaded} />
       <Switch>
@@ -38,6 +39,7 @@ function App() {
         </Route>
 
       </Switch>
+      </div>
       <footer className="footer">
           <div className="footer-about">
             <strong>Rabbit, a clone of Reddit. By Ashwin Ramakrishnan</strong>
@@ -48,7 +50,7 @@ function App() {
             </a>
           </div>
       </footer>
-    </div>
+    </>
   );
 }
 
