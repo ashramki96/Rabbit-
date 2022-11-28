@@ -1,50 +1,54 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
-import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
-import { authenticate } from './store/session';
+import Navigation from "./components/Navigation";
+import HomePage from "./components/HomePage"
+import * as sessionActions from "./store/session";
+import MyProfile from './components/MyProfile';
+import PostDetails from './components/PostDetails';
+import CreatePost from './components/CreatePost';
+
+
 
 function App() {
-  const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    (async() => {
-      await dispatch(authenticate());
-      setLoaded(true);
+    (async () => {
+      await dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
     })();
   }, [dispatch]);
 
-  if (!loaded) {
-    return null;
-  }
-
   return (
-    <BrowserRouter>
-      <NavBar />
+    <div className = "page-container">
+      <Navigation isLoaded={isLoaded} />
       <Switch>
-        <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute>
         <Route path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <HomePage />
         </Route>
+        <Route path='/myprofile' exact={true} >
+          <MyProfile />
+        </Route>
+        <Route path='/posts/:postId' exact={true} >
+          <PostDetails />
+        </Route>
+        <Route path = '/createpost' exact = {true}>
+          <CreatePost/>
+        </Route>
+
       </Switch>
-    </BrowserRouter>
+      <footer className="footer">
+          <div className="footer-about">
+            <strong>Rabbit, a clone of Reddit. By Ashwin Ramakrishnan</strong>
+          </div>
+          <div className="footer-links">
+            <a id="github" className="links-github" href="https://github.com/jameswonlee/CodeBunny">
+              <i className="fa-brands fa-github fa-xl"></i>
+            </a>
+          </div>
+      </footer>
+    </div>
   );
 }
 

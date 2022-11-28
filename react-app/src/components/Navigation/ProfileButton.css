@@ -1,0 +1,111 @@
+.profile-button-container{
+    display: inline-block;
+    position: relative;
+    justify-content: center;
+    /* padding: 2px; */
+    border-style: solid;
+    border-color: rgb(216, 214, 214);
+    border-width: thin;
+    border-radius: 0px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.actual-button{
+    border:none;
+    background-color: white;
+    border-radius: 0px;
+}
+
+.fa-solid{
+    /* color:rgb(189, 46, 196); */
+    padding:7px;
+}
+
+.dropdown-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 135px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 5;
+    top: 85%;
+    border-radius: 0px;
+    right: 11%;
+   
+}
+
+
+.username-container:hover{
+    background-color: rgb(11, 58,13);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 0px;
+}
+
+.log-out{
+    padding: 5px
+}
+
+.log-out:hover{
+    background-color: rgb(11, 58,13);
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 0px;
+}
+
+.my-spots{
+    padding: 5px;
+}
+
+.my-reviews{
+    padding: 5px;
+}
+
+
+#pink:hover{
+    color: rgb(11, 58,13)
+}
+
+.sign-up-text{
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.log-in-text {
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+.log-in-button{
+    background-color: rgb(38, 118, 210);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:5px;
+    width:100px;
+    border-radius: 17px;
+    margin-left: 12px;
+}
+
+
+
+.sign-up-button{
+    color: rgb(38, 118, 210);
+    border: 1px rgb(38, 118, 210) solid;
+    cursor: pointer;
+    padding:5px;
+    width:100px;
+    border-radius: 17px;
+}
