@@ -1,3 +1,9 @@
 .editPostText{
-    /* width: 300px; */
+    width: 500px;
+}
+
+.submitCancelContainerPost{
+    display: flex;
+    flex-direction: row;
+    padding-left: 350px;
 }
