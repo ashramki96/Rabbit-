@@ -21,7 +21,7 @@ const HomePage = () => {
 
     return (
         <div>
-        <h2 className = "welcome">Welcome to Rabbit!</h2>
+        {/* <h2 className = "welcome">Welcome to Rabbit!</h2> */}
         {sessionUser ? <div className = "createPostContainer">
          <div className = "createPostButton" onClick = {() => history.push("/createpost")}>Create Post</div>
         </div> : null}

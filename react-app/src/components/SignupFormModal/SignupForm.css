@@ -33,7 +33,7 @@ padding-right: 30px;
 
 
 .signupButton{
-    width:100%;
+    width:90%;
     background-color: #FF4301;
     color: white;
     border-radius:20px;
@@ -43,6 +43,7 @@ padding-right: 30px;
     border: none;
     font-weight: bold;
     font-size: 13px;
+    cursor: pointer;
 }
 
 .form-inputs{
@@ -51,8 +52,8 @@ padding-right: 30px;
 
 }
 
-.Password-Container{
+/* .Password-Container{
     padding-top: 15px;
     padding-bottom: 20px;
 
-}
+} */

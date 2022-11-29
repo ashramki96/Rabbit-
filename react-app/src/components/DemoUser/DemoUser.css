@@ -1,5 +1,5 @@
 .Demo-Button{
-    width:100%;
+    width:90%;
     background-color: #FF4301;
     color: white;
     border-radius:20px;
@@ -9,4 +9,7 @@
     border: none;
     font-weight: bold;
     font-size: 13px;
+    cursor: pointer;
 }
+
+

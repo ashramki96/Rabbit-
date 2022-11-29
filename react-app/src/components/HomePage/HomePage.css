@@ -16,16 +16,36 @@
 
 
 .createPostButton{
-    background-color: #FF4301;
-    color: white;
-    border: none;
+    background-color: white;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
     cursor: pointer;
     padding:5px;
-    width:200px;
+    width:300px;
     border-radius: 17px;
     text-align: center;
     font-weight: bold;
     margin: auto;
+    margin-bottom: 35px;
+
+}
+
+.createPostButton:hover{
+    background-color: #FF4301;
+    color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FF4301;
+    cursor: pointer;
+    padding:5px;
+    width:300px;
+    border-radius: 17px;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 35px;
 }
 
 .welcome{
