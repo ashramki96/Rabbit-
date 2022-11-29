@@ -32,8 +32,8 @@ const HomePage = () => {
                         <div>
                             <NavLink key={post.id} to={`/posts/${post.id}`}>
                                 <div className="innerPostContainer">
-                                    <span>r/{post.subreddit.name}</span> <span>Posted by u/{post.user.username}</span>
-                                    <h4>{post.title}</h4>
+                                    <span className = "subredditName">r/{post.subreddit.name}</span> <span className = "postedBy">Posted by u/{post.user.username}</span>
+                                    <h3>{post.title}</h3>
                                     <div>{post.text}</div>
                                 </div>
                             </NavLink>

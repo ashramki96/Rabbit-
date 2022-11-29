@@ -77,7 +77,7 @@ const PostDetails = () => {
         
         <div>
             <div className="innerPostContainer">
-            <span>r/{post.subreddit.name}</span> <span>Posted by u/{post.user.username}</span>
+            <span className = "subredditName">r/{post?.subreddit.name}</span> <span className = "postedBy">Posted by u/{post?.user.username}</span>
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
                 {sessionUser?.id === post?.user_id ? <div className = "deleteButton" onClick = {() => handlePostDelete(comment?.id)}>Delete   </div> : null}
@@ -92,11 +92,11 @@ const PostDetails = () => {
                 {comments.slice(0).reverse().map(comment => {
                     return(
                         <div className = "innerCommentContainer">
-                            <div><strong>u/{comment?.user.username}</strong></div>
+                            <div className = "commentpostedBy">{comment?.user.username}</div>
                             {comment?.comment}
                             <br></br>
                             <div className = "deleteEditContainer">
-                           {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete   </div> : null}
+                           {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete </div> : null}
                            {sessionUser && sessionUser.id === comment.user_id ? <div className = "editCommentComponent"><EditComment currComment = {comment}/></div> : null}
                             </div>
                         </div>

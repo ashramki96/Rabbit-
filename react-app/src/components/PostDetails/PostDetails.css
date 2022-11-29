@@ -30,6 +30,24 @@ textarea {
   }
 
   .deleteEditContainer {
+    padding-top: 5px;
     display: flex;
     flex-direction: row;
   }
+
+  .subredditName {
+    font-weight: bold;
+    font-size: small;
+}
+
+.postedBy {
+    font-size: small;
+    color: grey;
+}
+
+.commentpostedBy {
+  font-weight:bold;
+  font-size: small;
+  color: rgb(83, 81, 81)
+
+}

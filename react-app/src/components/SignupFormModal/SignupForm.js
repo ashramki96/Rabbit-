@@ -22,6 +22,7 @@ function SignupForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if(email.includes("@") !== true){
       return setErrors([`Please provide a valid email`])
     }
@@ -94,7 +95,7 @@ function SignupForm() {
           required
         />
         </div>
-      
+        
       <div>
         <input className="form-inputs"
         placeholder = "Confirm Password"

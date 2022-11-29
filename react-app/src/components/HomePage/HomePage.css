@@ -51,3 +51,13 @@
 .welcome{
     text-align: center;
 }
+
+.subredditName {
+    font-weight: bold;
+    font-size: small;
+}
+
+.postedBy {
+    font-size: small;
+    color: grey;
+}

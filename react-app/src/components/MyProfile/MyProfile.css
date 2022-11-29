@@ -1,0 +1,17 @@
+.postTitle {
+    font-weight: bold;
+    color: grey;
+}
+
+.subredditNameComment {
+    color: rgb(102, 101, 101);
+    font-weight: bold
+}
+.myProfile {
+    text-align: center;
+    padding-bottom: 20px;    
+}
+
+.yourContent{
+    text-align: center;
+}
