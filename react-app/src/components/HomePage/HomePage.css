@@ -7,7 +7,7 @@
 }
 
 .innerPostContainer {
-    border: black 1px dotted;
+    border: black 1px solid;
     padding: 25px;
     border-radius: 10px;
     margin: 20px;

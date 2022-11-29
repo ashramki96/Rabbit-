@@ -4,7 +4,7 @@ import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
 import { loadAllPosts, editPost } from '../../store/post';
 import { createNewComment, deleteComment, editComment } from '../../store/comment';
-// import "./EditComment.css"
+import "./EditPost.css"
 import { $CombinedState } from 'redux';
 
 const EditPost = ({currPost}) => {
@@ -45,10 +45,10 @@ const EditPost = ({currPost}) => {
                 <div className="editForm">
                     <form onSubmit={handleTextEdit} onChange={editText} className="edit-post-form">
 
-                        <textarea maxlength = "5000">{currPost.text}</textarea>
+                        <textarea className = "editPostText" maxlength = "5000">{currPost.text}</textarea>
                         <div className="submitCancelContainer">
-                            <div className="edit-post-submit"><input type="submit" value="Submit"></input></div>
-                            <button onClick={() => setShowEditBox(false)}> Cancel </button>
+                            <div className="edit-post-submit"><input className = "submitButtonEdit" type="submit" value="Submit"></input></div>
+                            <button className = "cancelButtonEdit" onClick={() => setShowEditBox(false)}> Cancel </button>
                         </div>
 
                     </form>

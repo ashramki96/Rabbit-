@@ -77,11 +77,14 @@ const PostDetails = () => {
         
         <div>
             <div className="innerPostContainer">
-            <span className = "subredditName">r/{post?.subreddit.name}</span> <span className = "postedBy">Posted by u/{post?.user.username}</span>
+            <span className = "subredditName">r/{post?.subreddit.name}</span> <span className = "postedBy">posted by u/{post?.user.username}</span>
+            <div className = "deleteEditContainer">
+                {sessionUser?.id === post?.user_id ? <div className = "deleteButton" onClick = {() => handlePostDelete(comment?.id)}>Delete</div> : null}
+                {sessionUser?.id === post?.user_id ?<div className = "editCommentComponent"> <EditPost currPost = {post}/></div> : null}
+                </div>
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
-                {sessionUser?.id === post?.user_id ? <div className = "deleteButton" onClick = {() => handlePostDelete(comment?.id)}>Delete   </div> : null}
-                {sessionUser?.id === post?.user_id ? <EditPost currPost = {post}/> : null}
+                
                 <h4>Comments:</h4>
                 
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
@@ -96,7 +99,7 @@ const PostDetails = () => {
                             {comment?.comment}
                             <br></br>
                             <div className = "deleteEditContainer">
-                           {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete </div> : null}
+                           {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div> : null}
                            {sessionUser && sessionUser.id === comment.user_id ? <div className = "editCommentComponent"><EditComment currComment = {comment}/></div> : null}
                             </div>
                         </div>

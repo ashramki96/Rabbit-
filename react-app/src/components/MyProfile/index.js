@@ -23,7 +23,12 @@ const MyProfile = () => {
     return (
         <div>
         <h1 className = "myProfile">u/{sessionUser?.username}'s  Profile </h1>
-        <h3 className = "yourContent">Your Posts are: </h3>
+        {userPosts.length === 0 && userComments.length === 0 ? 
+        <div>
+        <h2 className = "nothing">Nothing to see here! Go engage on some posts or make your own!</h2>
+        <img className = "blind" src = "https://a.thumbs.redditmedia.com/yEE6JW30dDWjn5fM-53uj_rt_HvKeHPzJromK93goN4.png" />
+        </div>: null}
+        {userPosts.length > 0 ? <h3 className = "yourContent">Your Posts are: </h3>: null}
         {userPosts.map(post => {
             return (
                 <div>
@@ -37,7 +42,7 @@ const MyProfile = () => {
                 </div>
             )
         })}
-        <h3 className = "yourContent">Your Comments are: </h3>
+        {userComments.length > 0 ? <h3 className = "yourContent">Your Comments are: </h3>: null}
             {userComments.map(comment => {
                 return (
                     <div>

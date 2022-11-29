@@ -1,5 +1,5 @@
 .innerCommentContainer{
-    border: black 1px dotted;
+    border: lightgrey 1px solid;
     padding: 15px;
     margin: 20px;
     width: 90%;
@@ -20,10 +20,16 @@ textarea {
   }
 
   .deleteButton {
-    font-size: small;
+    font-size: 12px;
     color: grey;
     cursor: pointer;
   }
+
+  .deleteButton:hover{
+    font-size: 12px;
+    color: black;
+    cursor: pointer;
+}
 
   .editCommentComponent {
     padding-left: 5px;
@@ -50,4 +56,36 @@ textarea {
   font-size: small;
   color: rgb(83, 81, 81)
 
+}
+
+.submitButton{
+  width:10%;
+  background-color: #FF4301;
+  color: white;
+  border-radius:20px;
+  padding:5px;
+  /* margin-top: 5%;
+  margin-bottom: 2%; */
+  border: none;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.submitButton:hover{
+  width:10%;
+  background-color: #FF4301;
+  color: white;
+  border-radius:20px;
+  padding:5px;
+  /* margin-top: 5%;
+  margin-bottom: 2%; */
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.submitButton:disabled{
+  cursor: not-allowed
 }
