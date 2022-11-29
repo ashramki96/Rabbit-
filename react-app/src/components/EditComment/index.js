@@ -51,7 +51,7 @@ const EditComment = ({currComment}) => {
             <div className = "editForm">
             <form onSubmit={handleCommentEdit} onChange = {editSaidComment} className = "edit-comment-form">
                 
-         <textarea>{currComment.comment}</textarea>
+         <textarea maxlength = "300">{currComment.comment}</textarea>
          <div className = "submitCancelContainer">
          <div className = "edit-comment-submit"><input type="submit" value="Submit"></input></div>
          <button onClick = {() => setShowEditBox(false)}> Cancel </button>

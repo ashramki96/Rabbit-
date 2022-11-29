@@ -5,6 +5,7 @@ import { loadAllComments} from '../../store/comment';
 import { loadAllPosts, createNewPost } from '../../store/post';
 import { createNewComment, deleteComment } from '../../store/comment';
 import { loadAllSubreddits } from '../../store/subreddit';
+import './CreatePost.css'
 
 const CreatePost = () => {
     const dispatch = useDispatch();
@@ -67,8 +68,8 @@ const CreatePost = () => {
                     </select>
                 </div>
                 <input placeholder="title" maxlength = "300" required onChange={createTitle}></input>
-                <textarea placeholder="What are your thoughts?" required onChange={createText}></textarea>
-                <div className = "post-submit"><input type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
+                <textarea placeholder="What are your thoughts?" maxlength = "6000" required onChange={createText}></textarea>
+                <div className = "post-submit"><input className = "submitButton" type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
             </form>
         </>
     )

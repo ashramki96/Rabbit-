@@ -84,8 +84,8 @@ const PostDetails = () => {
                 <h4>Comments:</h4>
                 
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
-                    <textarea placeholder="What are your thoughts?" required></textarea>
-                    <div className = "comment-submit"><input type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
+                    <textarea placeholder="What are your thoughts?" maxlength = "300" required></textarea>
+                    <div className = "comment-submit"><input className = "submitButton" type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
                 </form> : null}
 
                 {comments.slice(0).reverse().map(comment => {

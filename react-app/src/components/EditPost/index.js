@@ -45,7 +45,7 @@ const EditPost = ({currPost}) => {
                 <div className="editForm">
                     <form onSubmit={handleTextEdit} onChange={editText} className="edit-post-form">
 
-                        <textarea>{currPost.text}</textarea>
+                        <textarea maxlength = "5000">{currPost.text}</textarea>
                         <div className="submitCancelContainer">
                             <div className="edit-post-submit"><input type="submit" value="Submit"></input></div>
                             <button onClick={() => setShowEditBox(false)}> Cancel </button>
