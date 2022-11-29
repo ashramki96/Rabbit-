@@ -29,8 +29,7 @@ background-color: white;
 }
 
 .logo{
-    max-height: 200px;
-    max-width: 200px;
+    width: 35%;
     /* border-color: rgb(255, 0, 144);
     border-style: solid; */
 }
@@ -53,7 +52,7 @@ background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 25%;
+    /* width: 25%; */
     justify-content: space-between;
 
 }

@@ -57,12 +57,11 @@ function ProfileButton({ user, setShowLogInModal, setShowSignUpModal }) {
   // if (user) {
     loggedInOrNot = (
       <>
-        <button className="actual-button" onClick={openMenu}>
-          <div className="profile-button-container" id="pink">
+        
+          <div className="profile-button-container" onClick={openMenu} id="pink">
             <span className="fa-solid fa-bars fa-2x" id="pink"></span>
-            <span className="fa-solid fa-circle-user fa-2x" id="pink"></span>
           </div>
-        </button>
+        
         {showMenu && (
           <div className="dropdown-content">
             <div>
