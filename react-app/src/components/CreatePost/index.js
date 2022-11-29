@@ -21,10 +21,11 @@ const CreatePost = () => {
         dispatch(loadAllSubreddits())
 
         const errors = []
+        if(!subreddit) errors.push("Please enter a subreddit")
         if(title.length === 0) errors.push("Please enter a title")
         if(text.length === 0) errors.push("Please enter text")
         setValidationErrors(errors)
-    }, [dispatch, title, text])
+    }, [dispatch, title, text, subreddit])
 
     const allSubreddits = useSelector(state => Object.values(state.subreddits))
     let sessionUser = useSelector(state => state.session.user)
@@ -45,10 +46,11 @@ const CreatePost = () => {
         console.log("text", text)
         console.log("subredditid", subreddit)
 
-        await dispatch(createNewPost(postPayload, subreddit, sessionUser.id))
-        .then (() => dispatch(loadAllComments))
-        .then (() => dispatch(loadAllPosts))
-        .then(() => history.push("/"))
+        const newPost = await dispatch(createNewPost(postPayload, subreddit, sessionUser.id))
+        // .then (() => dispatch(loadAllComments))
+        // .then (() => dispatch(loadAllPosts))
+        console.log("this was the created psot", newPost)
+        history.push(`/posts/${newPost.id}`)
         
         
 
@@ -64,7 +66,7 @@ const CreatePost = () => {
                         {allSubreddits.map((sub, i) => {return <option key={i} value={sub.id}>{sub.name}</option> })}
                     </select>
                 </div>
-                <input placeholder="title" required onChange={createTitle}></input>
+                <input placeholder="title" maxlength = "300" required onChange={createTitle}></input>
                 <textarea placeholder="What are your thoughts?" required onChange={createText}></textarea>
                 <div className = "post-submit"><input type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
             </form>
