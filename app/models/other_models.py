@@ -70,7 +70,9 @@ class Post(db.Model):
             'user_id': self.user_id,
             'subreddit_id': self.subreddit_id,
             'created_at': self.created_at,
-            'user': self.user.to_dict() if self.user else None
+            'user': self.user.to_dict() if self.user else None,
+            'subreddit': self.subreddit.to_dict()
+            # 'comments': len(self.commments) if self.comments else None
         }
     
 

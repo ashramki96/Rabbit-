@@ -77,6 +77,7 @@ const PostDetails = () => {
         
         <div>
             <div className="innerPostContainer">
+            <span>r/{post.subreddit.name}</span> <span>Posted by u/{post.user.username}</span>
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
                 {sessionUser?.id === post?.user_id ? <div className = "deleteButton" onClick = {() => handlePostDelete(comment?.id)}>Delete   </div> : null}
@@ -91,7 +92,7 @@ const PostDetails = () => {
                 {comments.slice(0).reverse().map(comment => {
                     return(
                         <div className = "innerCommentContainer">
-                            <div><strong>{comment?.user.username}</strong></div>
+                            <div><strong>u/{comment?.user.username}</strong></div>
                             {comment?.comment}
                             <br></br>
                             <div className = "deleteEditContainer">
