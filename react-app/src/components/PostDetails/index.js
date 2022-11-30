@@ -96,7 +96,7 @@ const PostDetails = () => {
                     return(
                         <div className = "innerCommentContainer">
                             <div className = "commentpostedBy">{comment?.user.username}</div>
-                            {comment?.comment}
+                            <span className = "commentComment"> {comment?.comment}</span>
                             <br></br>
                             <div className = "deleteEditContainer">
                            {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div> : null}

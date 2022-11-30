@@ -60,17 +60,19 @@ const CreatePost = () => {
     return (
         <>
             <h2>Create a post</h2>
-            <form className="comment-form" onSubmit = {handlePostSubmit}>
-                <div> Select the community:
-                    <select className="selectfield" onChange={createSubreddit}>
-                        <option value="" disabled selected hidden>Choose Community</option>
-                        {allSubreddits.map((sub, i) => {return <option key={i} value={sub.id}>{sub.name}</option> })}
+            <div className = "outerFormContainer">
+            <form className="post-form" onSubmit = {handlePostSubmit}>
+                <div className = "custom-select">
+                    <select className="selectField" onChange={createSubreddit}>
+                        <option className = "options" value="" disabled selected hidden>Choose Community</option>
+                        {allSubreddits.map((sub, i) => {return <option className = "options" key={i} value={sub.id}>r/{sub.name}</option> })}
                     </select>
                 </div>
-                <input placeholder="title" maxlength = "300" required onChange={createTitle}></input>
-                <textarea placeholder="What are your thoughts?" maxlength = "6000" required onChange={createText}></textarea>
+                <input className = "title" placeholder="Title" maxlength = "300" required onChange={createTitle}></input>
+                <textarea className = "postText" placeholder="What are your thoughts?" maxlength = "6000" required onChange={createText}></textarea>
                 <div className = "post-submit"><input className = "submitButton" type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
             </form>
+            </div>
         </>
     )
    
