@@ -17,6 +17,7 @@
 .title{
     width: 90%;
     padding: 10px;
+    margin-bottom: 0px;
 }
 
 .selectField{
@@ -30,20 +31,11 @@
 } */
 
 select {
-    /* -webkit-appearance: button;
-    -moz-appearance: button;
-    -webkit-user-select: none;
-    -moz-user-select: none; */
-    /* -webkit-padding-end: 20px;
-    -moz-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -moz-padding-start: 2px; */
-    background-color: #FF4301; /* Fallback color if gradients are not supported */
-    /* background-position: center right;
-    background-repeat: no-repeat; */
-    /* border: 1px solid #AAA; */
+  
+    background-color: #FF4301;
+   
     border-radius: 10px;
-    /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1); */
+    
     color: white;
     margin: 0;
     overflow: hidden;
@@ -51,4 +43,14 @@ select {
     padding: 5px;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+
+  .wordLimitCreatePost {
+    display: flex;
+    justify-content: flex-end;
+    /* width: 110%; */
+    margin-bottom: 10px;
+    margin-right: 110px;
+    font-size: 12px;
+      color: grey;
   }

@@ -69,7 +69,13 @@ const CreatePost = () => {
                     </select>
                 </div>
                 <input className = "title" placeholder="Title" maxlength = "300" required onChange={createTitle}></input>
-                <textarea className = "postText" placeholder="What are your thoughts?" maxlength = "6000" required onChange={createText}></textarea>
+                <div className="wordLimitCreatePost">
+              {title.length}/300
+                </div>
+                <textarea className = "postText" placeholder="What are your thoughts?" maxlength = "5000" required onChange={createText}></textarea>
+                <div className="wordLimitCreatePost">
+              {text.length}/5000
+                </div>
                 <div className = "post-submit"><input className = "submitButton" type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
             </form>
             </div>

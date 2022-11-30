@@ -88,7 +88,10 @@ const PostDetails = () => {
                 <h4>Comments:</h4>
                 
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
-                    <textarea placeholder="What are your thoughts?" maxlength = "300" required></textarea>
+                    <textarea className = "createCommentBox" placeholder="What are your thoughts?" maxlength = "300" required></textarea>
+                    <div className="wordLimitmain">
+              {comment.length}/300
+                </div>
                     <div className = "comment-submit"><input className = "submitButton" type="submit" value="Submit" disabled = {validationErrors.length > 0}></input></div>
                 </form> : null}
 

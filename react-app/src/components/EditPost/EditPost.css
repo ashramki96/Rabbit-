@@ -1,9 +1,19 @@
 .editPostText{
     width: 500px;
+    margin-bottom: 0px;
 }
 
 .submitCancelContainerPost{
     display: flex;
     flex-direction: row;
     padding-left: 350px;
+}
+
+.wordLimitEditPost{
+    display: flex;
+justify-content: flex-end;
+margin-right: 20px;
+margin-bottom: 10px;
+font-size: small;
+  color: rgb(83, 81, 81)
 }

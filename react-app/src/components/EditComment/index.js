@@ -51,7 +51,10 @@ const EditComment = ({currComment}) => {
             <div className = "editForm">
             <form onSubmit={handleCommentEdit} onChange = {editSaidComment} className = "edit-comment-form">
                 
-         <textarea maxlength = "300">{currComment.comment}</textarea>
+         <textarea className = "txtareaEditComment" maxlength = "300">{currComment.comment}</textarea>
+         <div className="wordLimit">
+              {comment.length}/300
+                </div>
          <div className = "submitCancelContainer">
          <div className = "edit-comment-submit"><input className = "submitButtonEdit" type="submit" value="Submit"></input></div>
          <button className = "cancelButtonEdit" onClick = {() => setShowEditBox(false)}> Cancel </button>
