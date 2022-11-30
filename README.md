@@ -69,19 +69,23 @@ Rabbit is a fullstack application 'clone' inspired by the [Reddit](https://www.r
    
    ## Login as a demo user to get started
 
-![](https://i.ibb.co/8K0GVsf/splashpagedemouser.png)
+![](https://i.ibb.co/Vv5W52J/rabbit-login-demo.jpg)
 
-## Create you first spot
+## Create you first post
 
-![](https://i.ibb.co/wQxkRqL/create-Aspot.png)
+![](https://i.ibb.co/4KtYh9f/rabbit-create-a-post.jpg)
 
-## Made a typo? Edit your spot
+## Made a typo? Edit your post
 
-![](https://i.ibb.co/ByvkLpR/editspot.png)
+![](https://i.ibb.co/TM5GP3Q/rabbit-edit-post.jpg)
 
-## Create a review on a spot you visited
+## Create a comment on a post
 
-![](https://i.ibb.co/mNTsDq4/createreview.png)
+![](https://i.ibb.co/H4XtDpL/rabbit-create-a-comment.jpg)
+
+## Edit or Delete your comment if you changed your mind
+
+![](https://i.ibb.co/RhnPDLh/rabbit-edit-comment.jpg)
 
 ## Features on the way
 
