@@ -87,6 +87,7 @@ class Comment(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable = False)
     post_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("posts.id")), nullable = False)
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False, default=datetime.now)
+    # likes = db.relationship("Likes", back_populates = "comment", cascade = "all, delete-orphan")
     user = db.relationship("User", back_populates = "comments")
     post = db.relationship("Post", back_populates = "comments")
 
@@ -100,6 +101,23 @@ class Comment(db.Model):
             'user': self.user.to_dict() if self.user else None
         }
 
+# class Likes(db.Model):
+#     __tablename__ = "likes"
 
+#     if environment == "production":
+#         __table_args__ = {'schema': SCHEMA} 
+    
+#     id = db.Column(db.Integer, primary_key = True)
+#     comment_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("comments.id")), nullable = False)
+
+#     comment = db.relationship("Comment", back_populates = "likes")
+#     user = db.relationship("User", back_populates = "likes")
+
+#     def to_dict(self):
+#         return {
+#             'id': self.id,
+#             'comment': self.comment,
+#             'user': self.user.to_dict() if self.user else None
+#         }
 
     

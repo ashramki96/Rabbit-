@@ -21,13 +21,15 @@ textarea {
   }
 
   .deleteButton {
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
     color: grey;
     cursor: pointer;
   }
 
   .deleteButton:hover{
-    font-size: 12px;
+    font-size: 13px;
+    font-weight: bold;
     color: black;
     cursor: pointer;
 }
