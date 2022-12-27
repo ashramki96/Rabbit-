@@ -61,6 +61,7 @@ class Post(db.Model):
     user = db.relationship("User", back_populates = "posts")
     comments = db.relationship("Comment", back_populates = "post", cascade = "all, delete-orphan")
     subreddit = db.relationship("Subreddit", back_populates = "posts")
+    likes = db.relationship("Like", back_populates = 'posts', cascade="all, delete-orphan", single_parent=True)
 
     def to_dict(self):
         return {
@@ -71,6 +72,7 @@ class Post(db.Model):
             'subreddit_id': self.subreddit_id,
             'created_at': self.created_at,
             'user': self.user.to_dict() if self.user else None,
+            'likes': [like.to_dict() for like in self.likes] if self.likes else [],
             'subreddit': self.subreddit.to_dict()
             # 'comments': len(self.commments) if self.comments else None
         }
@@ -100,6 +102,25 @@ class Comment(db.Model):
             'user': self.user.to_dict() if self.user else None
         }
 
+class Like(db.Model):
+    __tablename__ = "likes"
+
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("posts.id")), nullable=False)
+
+    users = db.relationship("User", back_populates="likes")
+    posts = db.relationship("Post", back_populates="likes")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'post_id': self.post_id
+        }
 
 
     
