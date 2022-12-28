@@ -14,7 +14,6 @@ const HomePage = () => {
     useEffect(() => {
         dispatch(loadAllComments())
         dispatch(loadAllPosts())
-        dispatch(loadAllLikes())
     }, [dispatch])
 
     const allPosts = useSelector(state => Object.values(state.posts))
@@ -32,10 +31,11 @@ const HomePage = () => {
         
                 {allPosts.map(post => {
                     return (
-                        <div>
+                        <div className = "homePostContainer">
                             <CreateLike post = {post} sessionUser = {sessionUser} />
                             <NavLink key={post.id} to={`/posts/${post.id}`}>
                                 <div className="innerPostContainer">
+                                    
                                     <span className = "subredditName">r/{post.subreddit.name}</span> <span className = "postedBy">Posted by u/{post.user.username}</span>
                                     <h3>{post.title}</h3>
                                     <div>{post.text}</div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import {createNewLike, deleteLike, loadAllLikes} from "../../store/like"
 import {loadAllPosts} from "../../store/post"
+import "./CreateLike.css"
 
 
 function CreateLike({post, sessionUser}){
@@ -46,6 +47,7 @@ function CreateLike({post, sessionUser}){
 
         const payload = likeByUser.id
         console.log("this is payload", payload)
+        console.log(typeof(payload))
 
         let deletedlike
         deletedlike= await dispatch(deleteLike(payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts()))
@@ -54,16 +56,17 @@ function CreateLike({post, sessionUser}){
     return(
         <>
                 <div className="likes-container">
-            <div className="likes">Likes: {postLikes.length}</div>
+            
             {/* <div className="likes">Likes: {post.likes}</div> */}
         </div>
 
-        <div className="likecomment-description-container">
+        {/* <div className="likecomment-description-container"> */}
             <div className="Like-container">
-            {likeByUser ? <button onClick={() => deleteLikeHandler()}> DISLIKE</button>: <button onClick={() => likeHandler()}> LIKE</button>}
-            <button  onClick={() => deleteLikeHandler()}> DISLIKE</button>
+            {likeByUser ? <i class="fa fa-solid fa-arrow-up-long" onClick={() => deleteLikeHandler()}></i>: <i class="fa fa-solid fa-arrow-up-long" onClick={() => likeHandler()}></i>}
+            <div className="likes">{postLikes.length}</div>
+            {likeByUser ? <i class="fa fa-solid fa-arrow-down-long" onClick={() => deleteLikeHandler()}></i>: <i class="fa fa-solid fa-arrow-down-long" onClick={() => likeHandler()}></i>}
             </div>
-        </div>
+        {/* </div> */}
         </>
     )
 

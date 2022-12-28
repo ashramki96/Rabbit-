@@ -67,7 +67,7 @@ export const createNewLike = (post_id,user_id,payload) => async dispatch => {
 
 
 export const deleteLike = (likeId) => async dispatch => {
-    const response = await csrfFetch(`/api/likes/${likeId}`, {
+    const response = await csrfFetch(`/api/likes/${likeId}/`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

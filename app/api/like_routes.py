@@ -25,11 +25,15 @@ def get_all_likes():
 
 
 # remove like
-@like_bp.route("/<int:like_id>", methods=["DELETE"])
-@login_required
+@like_bp.route("/<int:like_id>/", methods=["DELETE"])
+# @login_required
 def remove_like(like_id):
 
+    print("did this work 1 !!!!!!!!!!!!!!!!!")
+
     like = Like.query.get(like_id)
+
+    print("did this work 2 !!!!!!!!!!!!!!!!!")
 
     if like:
         db.session.delete(like)

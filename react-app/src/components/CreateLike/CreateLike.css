@@ -1,0 +1,8 @@
+.Like-container {
+    display: flex;
+    flex-direction: column;
+    /* width: 10%; */
+    align-items: center;
+    padding-top: 25px;
+    /* margin-right: 5px; */
+}

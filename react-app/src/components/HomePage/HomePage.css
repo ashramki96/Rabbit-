@@ -61,3 +61,7 @@
     font-size: small;
     color: grey;
 }
+
+.homePostContainer {
+    display: flex;
+}
