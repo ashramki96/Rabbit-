@@ -60,8 +60,8 @@ function CreateLike({post, sessionUser}){
 
         <div className="likecomment-description-container">
             <div className="Like-container">
-            {likeByUser ? <button className="fa-solid fa-thumbs-up" onClick={() => deleteLikeHandler()}> DISLIKE</button>: <button className="fa-regular fa-thumbs-up" onClick={() => likeHandler()}> LIKE</button>}
-            <button className="fa-solid fa-thumbs-up" onClick={() => deleteLikeHandler()}> DISLIKE</button>
+            {likeByUser ? <button onClick={() => deleteLikeHandler()}> DISLIKE</button>: <button onClick={() => likeHandler()}> LIKE</button>}
+            <button  onClick={() => deleteLikeHandler()}> DISLIKE</button>
             </div>
         </div>
         </>

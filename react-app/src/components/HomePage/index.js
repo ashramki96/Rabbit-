@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
+import { loadAllLikes } from '../../store/like';
 import { loadAllPosts } from '../../store/post';
 import CreateLike from '../CreateLike';
 import "./HomePage.css"
@@ -13,6 +14,7 @@ const HomePage = () => {
     useEffect(() => {
         dispatch(loadAllComments())
         dispatch(loadAllPosts())
+        dispatch(loadAllLikes())
     }, [dispatch])
 
     const allPosts = useSelector(state => Object.values(state.posts))
@@ -31,12 +33,13 @@ const HomePage = () => {
                 {allPosts.map(post => {
                     return (
                         <div>
+                            <CreateLike post = {post} sessionUser = {sessionUser} />
                             <NavLink key={post.id} to={`/posts/${post.id}`}>
                                 <div className="innerPostContainer">
                                     <span className = "subredditName">r/{post.subreddit.name}</span> <span className = "postedBy">Posted by u/{post.user.username}</span>
                                     <h3>{post.title}</h3>
                                     <div>{post.text}</div>
-                                    <CreateLike post = {post} sessionUser = {sessionUser} />
+                                    
                                 </div>
                             </NavLink>
                         </div>
