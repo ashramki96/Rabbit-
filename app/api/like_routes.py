@@ -25,7 +25,7 @@ def get_all_likes():
 
 
 # remove like
-@like_bp.route("/<int:like_id>/", methods=["DELETE"])
+@like_bp.route("/<int:like_id>", methods=["DELETE"])
 @login_required
 def remove_like(like_id):
 

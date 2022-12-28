@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
 import { loadAllPosts } from '../../store/post';
+import CreateLike from '../CreateLike';
 import "./HomePage.css"
 
 const HomePage = () => {
@@ -35,6 +36,7 @@ const HomePage = () => {
                                     <span className = "subredditName">r/{post.subreddit.name}</span> <span className = "postedBy">Posted by u/{post.user.username}</span>
                                     <h3>{post.title}</h3>
                                     <div>{post.text}</div>
+                                    <CreateLike post = {post} sessionUser = {sessionUser} />
                                 </div>
                             </NavLink>
                         </div>

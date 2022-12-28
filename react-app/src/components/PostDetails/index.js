@@ -7,6 +7,7 @@ import { createNewComment, deleteComment, clearAllComments} from '../../store/co
 import "./PostDetails.css"
 import EditComment from '../EditComment';
 import EditPost from '../EditPost';
+import CreateLike from '../CreateLike';
 
 const PostDetails = () => {
     const dispatch = useDispatch();
@@ -84,7 +85,7 @@ const PostDetails = () => {
                 </div>
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
-                
+                {/* <CreateLike /> */}
                 <h4>Comments:</h4>
                 
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
