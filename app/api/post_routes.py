@@ -95,7 +95,8 @@ def create_like(post_id, sessionUserId):
         data = create_like_form.data
         like = Like(
                 user_id = data["user_id"],
-                post_id = data["post_id"]
+                post_id = data["post_id"],
+                like_status = data["like_status"]
                  )
 
         db.session.add(like)

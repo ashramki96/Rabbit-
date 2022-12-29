@@ -19,9 +19,13 @@ function CreateLike({post, sessionUser}){
     let post_id = post.id
     let user_id = sessionUser.id
 
+
     const postLikeArray= post.likes
 
     const likeByUser = postLikeArray.filter(like => like && like.user_id === sessionUser?.id)[0]
+    const allLikes = postLikeArray.filter(like => like && like.like_status === true)
+    const allDislikes = postLikeArray.filter(like => like && like.like_status === false)
+    const numberLikes = allLikes.length - allDislikes.length
 
     // console.log("this is likesarry By USER", likeByUser)
     // let objectLikeByUser = likeByUser[0]
@@ -34,7 +38,8 @@ function CreateLike({post, sessionUser}){
 
         const payload = {
             post_id,
-            user_id
+            user_id,
+            like_status: true
         }
 
         let like
@@ -42,15 +47,18 @@ function CreateLike({post, sessionUser}){
 
        }
 
-       const deleteLikeHandler = async () => {
+       const dislikeHandler = async () => {
         // e.preventDefault()
 
-        const payload = likeByUser.id
-        console.log("this is payload", payload)
-        console.log(typeof(payload))
+        const payload = {
+            post_id,
+            user_id,
+            like_status: false
+        }
 
-        let deletedlike
-        deletedlike= await dispatch(deleteLike(payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts()))
+        let like
+        like = await dispatch(createNewLike(post_id, user_id, payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts()))
+
        }
 
     return(
@@ -62,9 +70,9 @@ function CreateLike({post, sessionUser}){
 
         {/* <div className="likecomment-description-container"> */}
             <div className="Like-container">
-            {likeByUser ? <i class="fa fa-solid fa-arrow-up-long" onClick={() => deleteLikeHandler()}></i>: <i class="fa fa-solid fa-arrow-up-long" onClick={() => likeHandler()}></i>}
-            <div className="likes">{postLikes.length}</div>
-            {likeByUser ? <i class="fa fa-solid fa-arrow-down-long" onClick={() => deleteLikeHandler()}></i>: <i class="fa fa-solid fa-arrow-down-long" onClick={() => likeHandler()}></i>}
+            {likeByUser ? <i class="fa fa-solid fa-arrow-up-long"></i>: <i class="fa fa-solid fa-arrow-up-long" onClick={() => likeHandler()}></i>}
+            <div className="likes">{numberLikes}</div>
+            {likeByUser ? <i class="fa fa-solid fa-arrow-down-long"></i>: <i class="fa fa-solid fa-arrow-down-long" onClick={() => dislikeHandler()}></i>}
             </div>
         {/* </div> */}
         </>
@@ -72,6 +80,4 @@ function CreateLike({post, sessionUser}){
 
 }
 
-
 export default CreateLike
-

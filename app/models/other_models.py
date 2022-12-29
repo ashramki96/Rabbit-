@@ -73,6 +73,7 @@ class Post(db.Model):
             'created_at': self.created_at,
             'user': self.user.to_dict() if self.user else None,
             'likes': [like.to_dict() for like in self.likes] if self.likes else [],
+            'numLikes': len([like.to_dict() for like in self.likes]) if self.likes else 0,
             'subreddit': self.subreddit.to_dict()
             # 'comments': len(self.commments) if self.comments else None
         }
@@ -111,6 +112,7 @@ class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("posts.id")), nullable=False)
+    like_status = db.Column(db.Boolean, nullable = False)
 
     users = db.relationship("User", back_populates="likes")
     posts = db.relationship("Post", back_populates="likes")
@@ -119,7 +121,8 @@ class Like(db.Model):
         return {
             'id': self.id,
             'user_id': self.user_id,
-            'post_id': self.post_id
+            'post_id': self.post_id,
+            'like_status': self.like_status
         }
 
 
