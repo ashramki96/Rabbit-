@@ -61,6 +61,17 @@ function CreateLike({post, sessionUser}){
 
        }
 
+       const deleteLikeHandler = async () => {
+        // e.preventDefault()
+
+        const payload = likeByUser.id
+        console.log("this is payload", payload)
+        console.log(typeof(payload))
+
+        let deletedlike
+        deletedlike= await dispatch(deleteLike(payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts()))
+       }
+
     return(
         <>
                 <div className="likes-container">
@@ -70,9 +81,9 @@ function CreateLike({post, sessionUser}){
 
         {/* <div className="likecomment-description-container"> */}
             <div className="Like-container">
-            {likeByUser ? <i class="fa fa-solid fa-arrow-up-long"></i>: <i class="fa fa-solid fa-arrow-up-long" onClick={() => likeHandler()}></i>}
+            {likeByUser ? <i class="fa fa-solid fa-arrow-up-long" onClick={() => deleteLikeHandler()}></i>: <i class="fa fa-solid fa-arrow-up-long" onClick={() => likeHandler()}></i>}
             <div className="likes">{numberLikes}</div>
-            {likeByUser ? <i class="fa fa-solid fa-arrow-down-long"></i>: <i class="fa fa-solid fa-arrow-down-long" onClick={() => dislikeHandler()}></i>}
+            {likeByUser ? <i class="fa fa-solid fa-arrow-down-long" onClick={() => deleteLikeHandler()}></i>: <i class="fa fa-solid fa-arrow-down-long" onClick={() => dislikeHandler()}></i>}
             </div>
         {/* </div> */}
         </>
