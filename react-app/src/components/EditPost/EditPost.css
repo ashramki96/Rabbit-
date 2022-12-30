@@ -17,3 +17,15 @@ margin-bottom: 10px;
 font-size: small;
   color: rgb(83, 81, 81)
 }
+
+
+.submitButtonEdit:disabled {
+    cursor: not-allowed
+}
+
+.minimum {
+    font-size: small;
+  color: rgb(83, 81, 81);
+  margin-right: 25px;
+  
+}
