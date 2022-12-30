@@ -6,7 +6,9 @@
 }
 
 .outerFormContainer{
-    border: 1px solid black
+    border: 1px solid rgb(219, 217, 217);
+    background-color: white;
+   
 }
 
 .postText{
@@ -33,7 +35,6 @@
 select {
   
     background-color: #FF4301;
-   
     border-radius: 10px;
     
     color: white;
@@ -54,3 +55,8 @@ select {
     font-size: 12px;
       color: grey;
   }
+
+  .createPost{
+    text-align: center;
+  }
+

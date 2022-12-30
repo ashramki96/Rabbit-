@@ -24,6 +24,7 @@ const CreatePost = () => {
         const errors = []
         if(!subreddit) errors.push("Please enter a subreddit")
         if(title.length === 0) errors.push("Please enter a title")
+        if(text.length < 150) errors.push("Text must be greater than 150 characters")
         if(text.length === 0) errors.push("Please enter text")
         setValidationErrors(errors)
     }, [dispatch, title, text, subreddit])
@@ -59,8 +60,8 @@ const CreatePost = () => {
 
     return (
         <>
-            <h2>Create a post</h2>
             <div className = "outerFormContainer">
+            <h2 className = "createPost">Create a post</h2>
             <form className="post-form" onSubmit = {handlePostSubmit}>
                 <div className = "custom-select">
                     <select className="selectField" onChange={createSubreddit}>
@@ -72,7 +73,7 @@ const CreatePost = () => {
                 <div className="wordLimitCreatePost">
               {title.length}/300
                 </div>
-                <textarea className = "postText" placeholder="What are your thoughts?" maxlength = "5000" required onChange={createText}></textarea>
+                <textarea className = "postText" placeholder="What are your thoughts? 150 characters minimum" maxlength = "5000" required onChange={createText}></textarea>
                 <div className="wordLimitCreatePost">
               {text.length}/5000
                 </div>

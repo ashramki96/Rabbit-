@@ -78,7 +78,7 @@ const PostDetails = () => {
         <div className = "createLikeContainer"><CreateLike post = {post} sessionUser = {sessionUser} /></div>
         <div>
             
-            <div className="innerPostContainer">
+            <div className="innerPostDetailsContainer">
             <span className = "subredditName">r/{post?.subreddit.name}</span> <span className = "postedBy">posted by u/{post?.user.username}</span>
             <div className = "deleteEditContainer">
                 {sessionUser?.id === post?.user_id ? <div className = "deleteButton" onClick = {() => handlePostDelete(comment?.id)}>Delete</div> : null}

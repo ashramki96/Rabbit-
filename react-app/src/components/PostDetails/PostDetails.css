@@ -138,3 +138,12 @@ font-size: small;
   border-radius: 10px;
   padding-left: 10px;
 }
+
+.innerPostDetailsContainer {
+    border: black 0px solid;
+    padding: 30px;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: white;
+
+}

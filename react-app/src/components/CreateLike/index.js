@@ -22,12 +22,12 @@ function CreateLike({post, sessionUser}){
     let user_id = sessionUser.id
 
 
-    const postLikeArray= post.likes
+    const postLikeArray= post?.likes
 
-    const likeByUser = postLikeArray.filter(like => like && like.user_id === sessionUser?.id)[0]
-    const allLikes = postLikeArray.filter(like => like && like.like_status === true)
-    const allDislikes = postLikeArray.filter(like => like && like.like_status === false)
-    const numberLikes = allLikes.length - allDislikes.length
+    const likeByUser = postLikeArray?.filter(like => like && like.user_id === sessionUser?.id)[0]
+    const allLikes = postLikeArray?.filter(like => like && like.like_status === true)
+    const allDislikes = postLikeArray?.filter(like => like && like.like_status === false)
+    const numberLikes = allLikes?.length - allDislikes?.length
 
     // console.log("this is likesarry By USER", likeByUser)
     // let objectLikeByUser = likeByUser[0]
