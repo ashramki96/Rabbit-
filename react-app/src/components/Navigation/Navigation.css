@@ -5,12 +5,14 @@
 display: flex;
 justify-content: space-between;
 align-items: center;
-height: 38px;
+height: 45px;
+width: 100%;
 border-bottom: #D3D3D3 1px solid;
-position: sticky;
+position: fixed;
 top: 0px;
 background-color: white;
 margin-bottom: 35px;
+
 }
 
 .navbar-inner-container{

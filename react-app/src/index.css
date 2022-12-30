@@ -59,5 +59,9 @@ li, a, button, div {
     cursor: not-allowed
 }
 
+body {
+    background-color: rgb(245, 244, 244);
+    margin-top: 60px;
+}
 
 

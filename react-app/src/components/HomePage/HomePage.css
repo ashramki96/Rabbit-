@@ -30,6 +30,7 @@
     font-weight: bold;
     margin: auto;
     margin-bottom: 35px;
+    margin-top: 70px;
 
 }
 
@@ -47,6 +48,7 @@
     font-weight: bold;
     margin: auto;
     margin-bottom: 35px;
+    margin-top: 70px;
 }
 
 .welcome{
@@ -65,9 +67,10 @@
 
 .homePostContainer {
     display: flex;
-    border: black 1px solid;
+    border: rgb(204, 204, 204) 1px solid;
     padding: 10px;
     border-radius: 10px;
-    margin: 20px;
-    background-color: rgb(247, 245, 245);
+    /* margin: 30px; */
+    margin-bottom: 20px;
+    background-color: rgb(240, 239, 239);
 }
