@@ -127,3 +127,14 @@ margin-bottom: 10px;
 font-size: small;
   color: rgb(83, 81, 81)
 }
+
+.outerPostDetailsContainer {
+  margin: auto;
+  display: flex;
+  align-items: top;
+  /* border: red 1px solid; */
+  width: 60%;
+  border: rgb(204, 204, 204) 1px solid;
+  border-radius: 10px;
+  padding-left: 10px;
+}

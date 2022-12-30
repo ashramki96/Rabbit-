@@ -74,9 +74,10 @@ const PostDetails = () => {
     
 
     return(
-    <div className = "outerPostContainer">
-        
+    <div className = "outerPostDetailsContainer">
+        <div className = "createLikeContainer"><CreateLike post = {post} sessionUser = {sessionUser} /></div>
         <div>
+            
             <div className="innerPostContainer">
             <span className = "subredditName">r/{post?.subreddit.name}</span> <span className = "postedBy">posted by u/{post?.user.username}</span>
             <div className = "deleteEditContainer">

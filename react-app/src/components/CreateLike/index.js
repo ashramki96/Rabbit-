@@ -9,7 +9,7 @@ import "./images/up-arrow.png"
 
 function CreateLike({post, sessionUser}){
     const dispatch = useDispatch()
-    let postLikes = post.likes
+    let postLikes = post?.likes
     // useEffect(() => {
     //     dispatch(loadAllPosts())
       
@@ -18,7 +18,7 @@ function CreateLike({post, sessionUser}){
     if (!sessionUser){
         return null
     }
-    let post_id = post.id
+    let post_id = post?.id
     let user_id = sessionUser.id
 
 
