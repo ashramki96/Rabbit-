@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import {createNewLike, deleteLike, loadAllLikes} from "../../store/like"
 import {loadAllPosts} from "../../store/post"
 import "./CreateLike.css"
+import "./images/up-arrow.png"
+
 
 
 function CreateLike({post, sessionUser}){
@@ -81,9 +83,9 @@ function CreateLike({post, sessionUser}){
 
         {/* <div className="likecomment-description-container"> */}
             <div className="Like-container">
-            {likeByUser ? <i class="fa fa-solid fa-arrow-up-long" onClick={() => deleteLikeHandler()}></i>: <i class="fa fa-solid fa-arrow-up-long" onClick={() => likeHandler()}></i>}
+            {likeByUser ? <img className = "arrow" src = "https://i.ibb.co/R32gK4J/up-arrow.png" onClick={() => deleteLikeHandler()}/>: <img className = "arrow" src = "https://i.ibb.co/R32gK4J/up-arrow.png" onClick={() => likeHandler()}/>}
             <div className="likes">{numberLikes}</div>
-            {likeByUser ? <i class="fa fa-solid fa-arrow-down-long" onClick={() => deleteLikeHandler()}></i>: <i class="fa fa-solid fa-arrow-down-long" onClick={() => dislikeHandler()}></i>}
+            {likeByUser ? <img className = "arrow" src = "https://i.ibb.co/Vgm4081/down-arrow.png" onClick={() => deleteLikeHandler()}/>:  <img className = "arrow" src = "https://i.ibb.co/Vgm4081/down-arrow.png" onClick={() => dislikeHandler()}/>}
             </div>
         {/* </div> */}
         </>

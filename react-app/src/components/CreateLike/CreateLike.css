@@ -6,3 +6,11 @@
     padding-top: 25px;
     /* margin-right: 5px; */
 }
+
+.arrow {
+    height: 23px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    cursor: pointer;
+}
+
