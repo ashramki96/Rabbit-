@@ -137,6 +137,7 @@ font-size: small;
   border: rgb(204, 204, 204) 1px solid;
   border-radius: 10px;
   padding-left: 10px;
+  background-color: rgb(240, 239, 239);
 }
 
 .innerPostDetailsContainer {
