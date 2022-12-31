@@ -80,7 +80,7 @@ def delete_comment(comment_id):
     return {"Error": "404 Comment Not Found"}, 404
 
 #Create like for a comment by commentId
-@comment_bp.route("/<int:comment_id>/<int:sessionUserId>/likes/new", methods = ["POST"])
+@comment_bp.route("/<int:comment_id>/<int:sessionUserId>/commentlikes/new", methods = ["POST"])
 # @login_required
 def create_like(comment_id, sessionUserId):
 

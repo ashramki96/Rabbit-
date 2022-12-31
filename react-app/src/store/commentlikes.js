@@ -6,9 +6,9 @@ import {
 
 
 ///*************************************************************************** */
-const GET_ALLLIKES = 'posts/getAllLikes'
-const CREATE_LIKE = 'posts/createLike'
-const DELETE_LIKE = 'posts/removeLike'
+const GET_ALLLIKES = 'comments/getAllLikes'
+const CREATE_LIKE = 'comments/createLike'
+const DELETE_LIKE = 'comments/removeLike'
 
 
 const getAllLikes = like => ({
@@ -35,7 +35,7 @@ const removeLike = likeId => ({
 
 
 export const loadAllLikes = () => async dispatch => {
-    const response = await csrfFetch('/api/likes/')
+    const response = await csrfFetch('/api/commentlikes/')
     if (response.ok) {
         const likesList = await response.json();
         dispatch(getAllLikes(likesList))
@@ -46,8 +46,8 @@ export const loadAllLikes = () => async dispatch => {
 
 
 
-export const createNewLike = (post_id,user_id,payload) => async dispatch => {
-    const response = await csrfFetch(`/api/posts/${post_id}/${user_id}/likes/new`, {
+export const createNewLike = (comment_id,user_id,payload) => async dispatch => {
+    const response = await csrfFetch(`/api/comments/${comment_id}/${user_id}/commentlikes/new`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ export const createNewLike = (post_id,user_id,payload) => async dispatch => {
 
 
 export const deleteLike = (likeId) => async dispatch => {
-    const response = await csrfFetch(`/api/likes/${likeId}/`, {
+    const response = await csrfFetch(`/api/commentlikes/${likeId}/`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

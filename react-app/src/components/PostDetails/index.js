@@ -8,6 +8,7 @@ import "./PostDetails.css"
 import EditComment from '../EditComment';
 import EditPost from '../EditPost';
 import CreateLike from '../CreateLike';
+import CreateCommentLike from '../CreateCommentLike';
 
 const PostDetails = () => {
     const dispatch = useDispatch();
@@ -99,6 +100,8 @@ const PostDetails = () => {
 
                 {comments.slice(0).reverse().map(comment => {
                     return(
+                        <div className = "OuterCommentContainer">
+                            <div><CreateCommentLike comment = {comment} sessionUser = {sessionUser} /></div>
                         <div className = "innerCommentContainer">
                             <div className = "commentpostedBy">{comment?.user.username}</div>
                             <span className = "commentComment"> {comment?.comment}</span>
@@ -107,6 +110,7 @@ const PostDetails = () => {
                            {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div> : null}
                            {sessionUser && sessionUser.id === comment.user_id ? <div className = "editCommentComponent"><EditComment currComment = {comment}/></div> : null}
                             </div>
+                        </div>
                         </div>
                     )
                 })}

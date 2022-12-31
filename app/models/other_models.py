@@ -101,7 +101,8 @@ class Comment(db.Model):
             'post_id': self.post_id,
             'user_id': self.user_id,
             'created_at': self.created_at,
-            'user': self.user.to_dict() if self.user else None
+            'user': self.user.to_dict() if self.user else None,
+            'commentlikes': [commentlike.to_dict() for commentlike in self.commentlikes] if self.commentlikes else []
         }
 
 class Like(db.Model):
