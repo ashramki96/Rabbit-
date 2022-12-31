@@ -92,6 +92,7 @@ class Comment(db.Model):
     created_at = db.Column(db.DateTime, nullable=False, unique=False, index=False, default=datetime.now)
     user = db.relationship("User", back_populates = "comments")
     post = db.relationship("Post", back_populates = "comments")
+    commentlikes = db.relationship("CommentLike", back_populates = 'comments', cascade="all, delete-orphan", single_parent=True)
 
     def to_dict(self):
         return {
@@ -122,6 +123,29 @@ class Like(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'post_id': self.post_id,
+            'like_status': self.like_status
+        }
+        
+
+class CommentLike(db.Model):
+    __tablename__ = "commentlikes"
+
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
+    comment_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("comments.id")), nullable=False)
+    like_status = db.Column(db.Boolean, nullable = False)
+
+    users = db.relationship("User", back_populates="commentlikes")
+    comments = db.relationship("Comment", back_populates="commentlikes")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'comment_id': self.comment_id,
             'like_status': self.like_status
         }
 

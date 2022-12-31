@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, url_for, redirect, request, jsonify
-from ..models import User, Subreddit, Post, Comment, db
+from ..models import User, Subreddit, Post, Comment, db, CommentLike
+from ..forms.create_commentlike import CreateCommentLike
 from ..forms.create_comment import CreateComment
 from flask_login import current_user, login_user, logout_user, login_required
-from ..forms.create_comment import CreateComment
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -78,3 +78,24 @@ def delete_comment(comment_id):
         return {"message" : "Comment succesfully deleted"}, 200
 
     return {"Error": "404 Comment Not Found"}, 404
+
+#Create like for a comment by commentId
+@comment_bp.route("/<int:comment_id>/<int:sessionUserId>/likes/new", methods = ["POST"])
+# @login_required
+def create_like(comment_id, sessionUserId):
+
+    create_like_form = CreateCommentLike()
+    create_like_form['csrf_token'].data = request.cookies['csrf_token']
+    if create_like_form.validate_on_submit():
+        data = create_like_form.data
+        like = CommentLike(
+                user_id = data["user_id"],
+                comment_id = data["comment_id"],
+                like_status = data["like_status"]
+                 )
+
+        db.session.add(like)
+        db.session.commit()
+        return like.to_dict(), 201
+
+    return {"Error": "Validation Error"}, 401
