@@ -1,8 +1,10 @@
 .innerCommentContainer{
     border: lightgrey 1px solid;
-    padding: 15px;
+    padding: 10px;
     margin: 20px;
     width: 90%;
+    border-radius: 10px;
+    background-color: white;
 }
 
 textarea {
@@ -151,5 +153,13 @@ font-size: small;
 
 .OuterCommentContainer{
   display: flex;
+  border: rgb(204, 204, 204) 1px solid;
+  border-radius: 10px;
+  padding-left: 10px;
+  background-color: rgb(240, 239, 239);
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 0;
+
   
 }
