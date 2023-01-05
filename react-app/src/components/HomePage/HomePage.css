@@ -9,21 +9,26 @@
 .innerPostContainer {
     border: black 0px solid;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0 10px 10px 0;
     margin-left: 10px;
-    background-color: white;
+    margin-top: -11px;
+    margin-bottom: -11px;
+    margin-right: -11px;
+    /* background-color: white; */
+    background-color: #2b2928;
+
 
 }
 
 
 .createPostButton{
-    background-color: white;
-    color: black;
+    background-color: #2b2928;
+    color: white;
     border-width: 1px;
     border-style: solid;
     border-color: black;
     cursor: pointer;
-    padding:5px;
+    padding:10px;
     width:300px;
     border-radius: 17px;
     text-align: center;
@@ -41,7 +46,7 @@
     border-style: solid;
     border-color: #FF4301;
     cursor: pointer;
-    padding:5px;
+    padding:10px;
     width:300px;
     border-radius: 17px;
     text-align: center;
@@ -67,10 +72,15 @@
 
 .homePostContainer {
     display: flex;
-    border: rgb(204, 204, 204) 1px solid;
+    /* border: rgb(204, 204, 204) 1px solid; */
     padding: 10px;
     border-radius: 10px;
     /* margin: 30px; */
     margin-bottom: 20px;
-    background-color: rgb(240, 239, 239);
+    /* background-color: rgb(240, 239, 239); */
+    background-color: #383636de;
+}
+
+.likes{
+    color: black;
 }

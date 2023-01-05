@@ -1,11 +1,12 @@
 .postTitle {
     margin-left: 10px;
+    /* margin-top: 10px; */
     font-weight: bold;
-    color: grey;
+    color: white;
 }
 
 .subredditNameComment {
-    color: rgb(102, 101, 101);
+    color: lightgray;
     font-weight: bold
 }
 .myProfile {
@@ -26,4 +27,13 @@
   margin-left: auto;
   margin-right: auto;
   width: 20%;
+}
+
+.innerYourPostContainer{
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 1px solid rgb(94, 92, 92);
+    border-radius: 10px;
+    background-color: #2b2928;
 }

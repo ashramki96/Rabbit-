@@ -8,13 +8,14 @@
     /* margin-right: 5px; */
 }
 
-.arrow {
-    height: 20px;
-    margin-top: 15%;
-    margin-bottom: 15%;
-    cursor: pointer;
+#post-vote{
+    color: white;
 }
 
-.arrow:hover{
-    background-color: lightgrey;
+#post-vote:hover{
+    color: #FF4301;
+}
+
+.vote{
+    color: white;
 }

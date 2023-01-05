@@ -1,8 +1,9 @@
 .fa-solid {
     padding: 1px;
     cursor: pointer;
+    color: black
 }
 
-.fa-solid:hover{
+/* .fa-solid:hover{
     background-color: lightgrey;
-}
+} */

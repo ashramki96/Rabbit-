@@ -66,7 +66,7 @@ function Navigation({ isLoaded }){
     <div className="navbar-main">
       <div className="navbar-inner-container">
     <div className= "Home-Container">
-        <NavLink exact to="/"><img className = "logo" src = "https://i.ibb.co/bbvPMNd/reddit-clone-logo.jpg"/></NavLink>
+        <NavLink exact to="/"><i id = "logo" class="fa-3x fa-brands fa-reddit-alien"></i></NavLink>
     </div>
 
     <div className="Right-Side-Container">

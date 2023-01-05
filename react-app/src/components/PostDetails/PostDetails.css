@@ -1,10 +1,10 @@
 .innerCommentContainer{
-    border: lightgrey 1px solid;
+    /* border: lightgrey 1px solid; */
     padding: 10px;
     margin: 20px;
     width: 90%;
     border-radius: 10px;
-    background-color: white;
+    background-color: #2b2928;
 }
 
 textarea {
@@ -30,7 +30,7 @@ textarea {
 
   .deleteButton:hover{
     font-size: 12px;
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
@@ -57,7 +57,7 @@ textarea {
 .commentpostedBy {
   font-weight:bold;
   font-size: small;
-  color: rgb(83, 81, 81)
+  color: lightgray;
 
 }
 
@@ -98,6 +98,7 @@ textarea {
 .commentComment{
   padding-top: 15px;
   font-size: 15px;
+  color:white;
 }
 
 @media (min-width: 1060px) {
@@ -127,7 +128,7 @@ justify-content: flex-end;
 margin-right: 35px;
 margin-bottom: 10px;
 font-size: small;
-  color: rgb(83, 81, 81)
+  color: white;
 }
 
 .outerPostDetailsContainer {
@@ -136,10 +137,10 @@ font-size: small;
   align-items: top;
   /* border: red 1px solid; */
   width: 60%;
-  border: rgb(204, 204, 204) 1px solid;
+  /* border: rgb(204, 204, 204) 1px solid; */
   border-radius: 10px;
   padding-left: 10px;
-  background-color: rgb(240, 239, 239);
+  background-color: #383636de;
 }
 
 .innerPostDetailsContainer {
@@ -147,19 +148,23 @@ font-size: small;
     padding: 30px;
     border-radius: 10px;
     margin-left: 10px;
-    background-color: white;
+    background-color: #2b2928;
 
 }
 
 .OuterCommentContainer{
   display: flex;
-  border: rgb(204, 204, 204) 1px solid;
+  /* border: rgb(204, 204, 204) 1px solid; */
   border-radius: 10px;
   padding-left: 10px;
-  background-color: rgb(240, 239, 239);
+  background-color: #383636de;
   margin-top: 2%;
   margin-bottom: 2%;
   padding-top: 0;
 
   
+}
+
+#comment-vote{
+  color: white;
 }

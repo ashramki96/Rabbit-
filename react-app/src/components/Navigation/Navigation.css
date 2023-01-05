@@ -7,11 +7,14 @@ justify-content: space-between;
 align-items: center;
 height: 45px;
 width: 100%;
-border-bottom: #D3D3D3 1px solid;
+/* border-bottom: #D3D3D3 1px solid; */
 position: fixed;
 top: 0px;
-background-color: white;
+background-color: #2b2928;
 margin-bottom: 35px;
+margin-left: -8px;
+
+
 
 }
 
@@ -58,5 +61,15 @@ margin-bottom: 35px;
     /* width: 25%; */
     justify-content: space-between;
 
+}
+
+#logo{
+    color: white;
+    margin-left: 5px;
+}
+
+#logo:hover{
+    color: #FF4301;
+    margin-left: 5px;
 }
 

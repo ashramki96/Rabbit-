@@ -30,10 +30,13 @@ li, a, button, div {
     width: 100%;
     height: 40px;   /* Height of the footer */
     background: #FF4301;
+    
  }
 
  .footer-about {
     margin-top: 5px;
+    color: black;
+    
 }
 
 .footer-links {
@@ -43,12 +46,16 @@ li, a, button, div {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    
 }
 
-.links-github {
+#github, #linkedin {
+    margin-left: 10px;
     text-decoration: none;
     color: black;
 }
+
+
 
 .page-container{
     margin-bottom: 60px;
@@ -60,8 +67,20 @@ li, a, button, div {
 }
 
 body {
-    background-color: rgb(245, 244, 244);
+    background-color: rgba(26,26,27,255);
+    /* background-color: rgba(3,3,3,255); */
     margin-top: 60px;
 }
 
+div{
+    color: white;
+}
+
+#github:hover{
+    color:white;
+}
+
+#linkedin:hover{
+    color:white;
+}
 

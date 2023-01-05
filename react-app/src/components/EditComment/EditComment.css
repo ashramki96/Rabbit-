@@ -6,7 +6,7 @@
 
 .editButton:hover{
     font-size: 12px;
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
@@ -82,7 +82,7 @@
   width: 110%;
   margin-bottom: 10px;
   font-size: 12px;
-    color: grey;
+  color: white;
 
 
 }
