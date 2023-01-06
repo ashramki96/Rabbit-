@@ -54,17 +54,21 @@
 
 #dark .fa-bars{
     color: white;
+    margin-right: 10px;
 } 
 .fa-bars:hover{
     color: #FF4301;
+    margin-right: 10px;
 }
 
 #light .fa-bars{
     color: black;
+    margin-right: 10px;
 }
 
 #light .fa-bars:hover{
     color: #FF4301;
+    margin-right: 10px;
 }
 
 
