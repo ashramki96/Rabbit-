@@ -22,7 +22,7 @@ const HomePage = () => {
     console.log("ALL POSTS IS", allPosts)
 
     return (
-        <div>
+        <div className = "all-posts-container">
         {/* <h2 className = "welcome">Welcome to Rabbit!</h2> */}
         {sessionUser ? <div className = "createPostContainer">
          <div className = "createPostButton" onClick = {() => history.push("/createpost")}>Create Post</div>

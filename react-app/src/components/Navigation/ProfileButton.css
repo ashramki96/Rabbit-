@@ -34,20 +34,52 @@
     border-radius: 10px;
     right: 0%;
     font-size: 15px;
-    
-   
 }
 
-#pink{
+#light .dropdown-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    z-index: 5;
+    top: 120%;
+    border-radius: 10px;
+    right: 0%;
+    font-size: 15px;
+}
+
+#dark .fa-bars{
     color: white;
+} 
+.fa-bars:hover{
+    color: #FF4301;
 }
 
-#pink:hover{
+#light .fa-bars{
+    color: black;
+}
+
+#light .fa-bars:hover{
     color: #FF4301;
 }
 
 
 .username-container:hover{
+    background-color: #FF4301;
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    width:125px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#light .username-container:hover{
     background-color: #FF4301;
     color: white;
     border: none;
@@ -66,6 +98,18 @@
 }
 
 .log-out:hover{
+    background-color: #FF4301;
+    color: white;
+    border: none;
+    cursor: pointer;
+    /* padding: 5px; */
+    /* width:125px; */
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#light .log-out:hover{
     background-color: #FF4301;
     color: white;
     border: none;
@@ -113,9 +157,30 @@
     margin-left: 12px;
 }
 
+#light .log-in-button{
+    background-color: rgb(38, 118, 210);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:5px;
+    width:100px;
+    border-radius: 17px;
+    margin-left: 12px;
+}
+   
+
 
 
 .sign-up-button{
+    color: rgb(38, 118, 210);
+    border: 1px rgb(38, 118, 210) solid;
+    cursor: pointer;
+    padding:5px;
+    width:100px;
+    border-radius: 17px;
+}
+
+#light .sign-up-button{
     color: rgb(38, 118, 210);
     border: 1px rgb(38, 118, 210) solid;
     cursor: pointer;

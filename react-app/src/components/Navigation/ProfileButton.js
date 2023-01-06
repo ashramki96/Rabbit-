@@ -60,7 +60,7 @@ function ProfileButton({ user, setShowLogInModal, setShowSignUpModal }) {
       <>
         
           <div className="profile-button-container" onClick={openMenu} id="pink">
-            <span className="fa-solid fa-bars fa-2x" id="pink"></span>
+            <div className="fa-solid fa-bars fa-2x" ></div>
           </div>
         
         {showMenu && (

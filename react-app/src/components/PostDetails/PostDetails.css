@@ -7,6 +7,15 @@
     background-color: #2b2928;
 }
 
+#light .innerCommentContainer{
+  /* border: lightgrey 1px solid; */
+  padding: 10px;
+  margin: 20px;
+  width: 90%;
+  border-radius: 10px;
+  background-color: rgb(228, 226, 226);
+}
+
 textarea {
     resize: none;
     margin: 20px;
@@ -101,6 +110,12 @@ textarea {
   color:white;
 }
 
+#light .commentComment{
+  padding-top: 15px;
+  font-size: 15px;
+  color:black;
+}
+
 @media (min-width: 1060px) {
   .submitButton{
     background-color: #FF4301;
@@ -143,12 +158,33 @@ font-size: small;
   background-color: #383636de;
 }
 
+#light .outerPostDetailsContainer {
+  margin: auto;
+  display: flex;
+  align-items: top;
+  /* border: red 1px solid; */
+  width: 60%;
+  /* border: rgb(204, 204, 204) 1px solid; */
+  border-radius: 10px;
+  padding-left: 10px;
+  background-color: rgb(196, 195, 195)
+}
+
 .innerPostDetailsContainer {
     border: black 0px solid;
     padding: 30px;
     border-radius: 10px;
     margin-left: 10px;
     background-color: #2b2928;
+
+}
+
+#light .innerPostDetailsContainer {
+  border: black 0px solid;
+  padding: 30px;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: rgb(228, 226, 226);
 
 }
 
@@ -163,6 +199,18 @@ font-size: small;
   padding-top: 0;
 
   
+}
+
+#light .OuterCommentContainer{
+  display: flex;
+  /* border: rgb(204, 204, 204) 1px solid; */
+  border-radius: 10px;
+  padding-left: 10px;
+  background-color: rgb(196, 195, 195);
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 0;
+
 }
 
 #comment-vote{

@@ -20,6 +20,20 @@
 
 }
 
+#light .innerPostContainer {
+    border: black 0px solid;
+    padding: 30px;
+    border-radius: 0 10px 10px 0;
+    margin-left: 10px;
+    margin-top: -11px;
+    margin-bottom: -11px;
+    margin-right: -11px;
+    /* background-color: white; */
+    background-color: rgb(228, 226, 226);
+
+
+}
+
 
 .createPostButton{
     background-color: #2b2928;
@@ -39,7 +53,42 @@
 
 }
 
+#light .createPostButton{
+    background-color: white;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    cursor: pointer;
+    padding:10px;
+    width:300px;
+    border-radius: 17px;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 35px;
+    margin-top: 70px;
+
+}
+
 .createPostButton:hover{
+    background-color: #FF4301;
+    color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #FF4301;
+    cursor: pointer;
+    padding:10px;
+    width:300px;
+    border-radius: 17px;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 35px;
+    margin-top: 70px;
+}
+
+#light .createPostButton:hover{
     background-color: #FF4301;
     color: white;
     border-width: 1px;
@@ -81,6 +130,21 @@
     background-color: #383636de;
 }
 
+#light .homePostContainer {
+    display: flex;
+    /* border: rgb(204, 204, 204) 1px solid; */
+    padding: 10px;
+    border-radius: 10px;
+    /* margin: 30px; */
+    margin-bottom: 20px;
+    /* background-color: rgb(240, 239, 239); */
+    background-color: rgb(196, 195, 195);
+}
+
 .likes{
     color: black;
+}
+
+.all-posts-container{
+    /* margin-top: -20px; */
 }

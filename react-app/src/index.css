@@ -57,8 +57,14 @@ li, a, button, div {
 
 
 
-.page-container{
+#dark .page-container{
     margin-bottom: 60px;
+    background-color: rgba(26,26,27,255);
+}
+
+#light .page-container{
+    margin-bottom: 60px;
+    background-color: white;
 }
 
 
@@ -66,9 +72,8 @@ li, a, button, div {
     cursor: not-allowed
 }
 
-body {
+body #dark {
     background-color: rgba(26,26,27,255);
-    /* background-color: rgba(3,3,3,255); */
     margin-top: 60px;
 }
 
@@ -77,7 +82,7 @@ body #light{
     margin-top: 60px;
 }
 
-div{
+#dark div{
     color: white;
 }
 

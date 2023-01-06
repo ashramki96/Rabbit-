@@ -83,9 +83,9 @@ function CreateLike({post, sessionUser}){
 
         {/* <div className="likecomment-description-container"> */}
             <div className="Like-container">
-            {likeByUser ? <i id = "post-vote" class="fa-solid fa-chevron-up" onClick={() => deleteLikeHandler()}/>: <i id = "post-vote" class="fa-solid fa-chevron-up" onClick={() => likeHandler()}/>}
+            {likeByUser ? <i class="fa-solid fa-chevron-up" onClick={() => deleteLikeHandler()}/>: <i id = "post-vote" class="fa-solid fa-chevron-up" onClick={() => likeHandler()}/>}
             <div className="vote">{numberLikes}</div>
-            {likeByUser ? <i id = "post-vote" class="fa-solid fa-chevron-down" onClick={() => deleteLikeHandler()}/>:  <i id = "post-vote" class="fa-solid fa-chevron-down" onClick={() => dislikeHandler()}/>}
+            {likeByUser ? <i class="fa-solid fa-chevron-down" onClick={() => deleteLikeHandler()}/>:  <i id = "post-vote" class="fa-solid fa-chevron-down" onClick={() => dislikeHandler()}/>}
             </div>
         {/* </div> */}
         </>

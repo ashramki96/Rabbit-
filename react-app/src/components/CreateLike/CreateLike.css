@@ -8,11 +8,35 @@
     /* margin-right: 5px; */
 }
 
-#post-vote{
+#dark .fa-chevron-up{
     color: white;
 }
 
-#post-vote:hover{
+#dark .fa-chevron-up:hover{
+    color: #FF4301;
+}
+
+#light .fa-chevron-up{
+    color: black;
+}
+
+#light .fa-chevron-up:hover{
+    color: #FF4301;
+}
+
+#dark .fa-chevron-down{
+    color: white;
+}
+
+#dark .fa-chevron-down:hover{
+    color: #FF4301;
+}
+
+#light .fa-chevron-down{
+    color: black;
+}
+
+#light .fa-chevron-down:hover{
     color: #FF4301;
 }
 
