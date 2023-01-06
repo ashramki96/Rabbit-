@@ -9,7 +9,7 @@ import "./CreateCommentLike.css"
 
 function CreateCommentLike({comment, sessionUser}){
     const dispatch = useDispatch()
-    let commentLikes = comment?.likes
+    let commentLikes = comment?.commentlikes
     // useEffect(() => {
     //     dispatch(loadAllPosts())
       

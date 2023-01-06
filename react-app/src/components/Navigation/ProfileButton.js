@@ -7,6 +7,7 @@ import { Modal } from '../../context/Modal'
 // import SignupFormModal from '../SignupFormModal';
 import SignupForm from '../SignupFormModal/SignupForm'
 import LoginForm from '../LoginFormModal/LoginForm'
+import ReactSwitch from "react-switch";
 
 
 import './ProfileButton.css'
