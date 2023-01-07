@@ -22,7 +22,7 @@ const EditPost = ({currPost}) => {
         dispatch(loadAllPosts())
 
         const errors = []
-        if(text.length < 150) errors.push("Text must be greater than 150 characters")
+        if(text.length < 175) errors.push("Text must be greater than 175 characters")
         if(text.length === 0) errors.push("Please enter text")
         setValidationErrors(errors)
     }, [dispatch, text])
@@ -52,7 +52,7 @@ const EditPost = ({currPost}) => {
                     <form onSubmit={handleTextEdit} onChange={editText} className="edit-post-form">
                         <textarea className = "editPostText"  maxlength = "5000">{currPost.text}</textarea>
                         <div className="wordLimitEditPost">
-                        <div className = "minimum">150 Character minimum</div> {text.length}/5000
+                        <div className = "minimum">175 Character minimum</div> {text.length}/5000
                 </div>
                         <div className="submitCancelContainerPost">
                             <div className="edit-post-submit"><input className = "submitButtonEdit" type="submit" disabled = {validationErrors.length > 0} value="Submit"></input></div>
