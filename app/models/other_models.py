@@ -151,20 +151,6 @@ class CommentLike(db.Model):
             'like_status': self.like_status
         }
 
-#     if environment == "production":
-#         __table_args__ = {'schema': SCHEMA} 
-    
-#     id = db.Column(db.Integer, primary_key = True)
-#     comment_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("comments.id")), nullable = False)
 
-#     comment = db.relationship("Comment", back_populates = "likes")
-#     user = db.relationship("User", back_populates = "likes")
-
-#     def to_dict(self):
-#         return {
-#             'id': self.id,
-#             'comment': self.comment,
-#             'user': self.user.to_dict() if self.user else None
-#         }
 
     
