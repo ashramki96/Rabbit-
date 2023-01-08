@@ -7,6 +7,7 @@ import { Modal } from '../../context/Modal'
 // import SignupFormModal from '../SignupFormModal';
 import SignupForm from '../SignupFormModal/SignupForm'
 import LoginForm from '../LoginFormModal/LoginForm'
+import ReactSwitch from "react-switch";
 
 
 import './ProfileButton.css'
@@ -59,7 +60,7 @@ function ProfileButton({ user, setShowLogInModal, setShowSignUpModal }) {
       <>
         
           <div className="profile-button-container" onClick={openMenu} id="pink">
-            <span className="fa-solid fa-bars fa-2x" id="pink"></span>
+            <div className="fa-solid fa-bars fa-2x" ></div>
           </div>
         
         {showMenu && (

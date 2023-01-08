@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Navigation from "./components/Navigation";
@@ -7,12 +7,20 @@ import * as sessionActions from "./store/session";
 import MyProfile from './components/MyProfile';
 import PostDetails from './components/PostDetails';
 import CreatePost from './components/CreatePost';
+import ReactSwitch from "react-switch";
+
+export const ThemeContext  = createContext(null);
 
 
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [theme, setTheme] = useState("dark")
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"))
+  }
 
   useEffect(() => {
     (async () => {
@@ -21,9 +29,9 @@ function App() {
   }, [dispatch]);
 
   return (
-    <>
-    <div className = "page-container">
-      <Navigation isLoaded={isLoaded} />
+    <ThemeContext.Provider value = {{theme, toggleTheme}}>
+    <div className = "page-container" id = {theme}>
+      <Navigation isLoaded={isLoaded} theme = {theme} toggleTheme = {toggleTheme} />
       <Switch>
         <Route path='/' exact={true} >
           <HomePage />
@@ -42,6 +50,7 @@ function App() {
       </div>
       <footer className="footer">
           <div className="footer-about">
+          {/* <div className = "switch"><span className = "toggle">{theme === "light" ? "Light Mode" : "Dark Mode"}</span> <ReactSwitch onChange = {toggleTheme} checked = {theme === "light"}/></div> */}
             <strong>Rabbit, a clone of Reddit. By Ashwin Ramakrishnan</strong>
           </div>
           <div className="footer-links">
@@ -53,7 +62,7 @@ function App() {
             </a>
           </div>
       </footer>
-    </>
+    </ThemeContext.Provider>
   );
 }
 

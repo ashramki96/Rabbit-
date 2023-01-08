@@ -1,94 +1,92 @@
 .editButton{
-  font-size: 13px;
-  font-weight: bold;
-    color: grey;
-    cursor: pointer;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
 }
 
 .editButton:hover{
-  font-size: 13px;
-  font-weight: bold;
-    color: black;
-    cursor: pointer;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
 }
 
 .submitCancelContainer{
-    display: flex;
-    flex-direction: row;
-    /* padding-left: 20px; */
-    width: 150%;
-    margin-left: 45px;
+  display: flex;
+  flex-direction: row;
+  /* padding-left: 20px; */
+  width: 150%;
+  margin-left: 45px;
 }
 
 .submitButtonEdit {
-    width:80px;
-  background-color: #FF4301;
-  color: white;
-  border-radius:20px;
-  padding:5px;
-  /* margin-top: 5%;
-  margin-bottom: 2%; */
-  margin-right: 20px;
-  border: none;
-  font-weight: bold;
-  font-size: 13px;
-  cursor: pointer;
+  width:80px;
+background-color: #FF4301;
+color: white;
+border-radius:20px;
+padding:5px;
+/* margin-top: 5%;
+margin-bottom: 2%; */
+margin-right: 20px;
+border: none;
+font-weight: bold;
+font-size: 13px;
+cursor: pointer;
 }
 .submitButtonEdit:hover {
-    width:80px;
-  background-color: #FF4301;
-  color: white;
-  border-radius:20px;
-  padding:5px;
-  /* margin-top: 5%;
-  margin-bottom: 2%; */
-  margin-right: 20px;
-  border: none;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
+  width:80px;
+background-color: #FF4301;
+color: white;
+border-radius:20px;
+padding:5px;
+/* margin-top: 5%;
+margin-bottom: 2%; */
+margin-right: 20px;
+border: none;
+font-weight: bold;
+font-size: 14px;
+cursor: pointer;
 }
 
 .cancelButtonEdit{
-    width:80px;
-  background-color: #FF4301;
-  color: white;
-  border-radius:20px;
-  padding:5px;
-  /* margin-top: 5%;
-  margin-bottom: 2%; */
-  border: none;
-  font-weight: bold;
-  font-size: 13px;
-  cursor: pointer;
-  
+  width:80px;
+background-color: #FF4301;
+color: white;
+border-radius:20px;
+padding:5px;
+/* margin-top: 5%;
+margin-bottom: 2%; */
+border: none;
+font-weight: bold;
+font-size: 13px;
+cursor: pointer;
+
 }
 
 .cancelButtonEdit:hover{
-    width:80px;
-  background-color: #FF4301;
-  color: white;
-  border-radius:20px;
-  padding:5px;
-  /* margin-top: 5%;
-  margin-bottom: 2%; */
-  border: none;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
+  width:80px;
+background-color: #FF4301;
+color: white;
+border-radius:20px;
+padding:5px;
+/* margin-top: 5%;
+margin-bottom: 2%; */
+border: none;
+font-weight: bold;
+font-size: 14px;
+cursor: pointer;
 }
 
 .wordLimit{
-  display: flex;
-  justify-content: flex-end;
-  width: 110%;
-  margin-bottom: 10px;
-  font-size: 12px;
-    color: grey;
+display: flex;
+justify-content: flex-end;
+width: 110%;
+margin-bottom: 10px;
+font-size: 12px;
+color: white;
 
 
 }
 
 .txtareaEditComment{
-  margin-bottom: 0px;
+margin-bottom: 0px;
 }

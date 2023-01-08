@@ -2,11 +2,22 @@
     margin: 40px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
 }
 
 .outerFormContainer{
-    border: 1px solid black
+    /* border: 1px solid rgb(219, 217, 217);
+    border-radius: 20px; */
+    background-color: rgba(26,26,27,255)
+   
+}
+
+#light .outerFormContainer{
+    /* border: 1px solid black;
+    border-radius: 20px; */
+    background-color: white;
+   
 }
 
 .postText{
@@ -18,6 +29,7 @@
     width: 90%;
     padding: 10px;
     margin-bottom: 0px;
+    color: black;
 }
 
 .selectField{
@@ -33,14 +45,13 @@
 select {
   
     background-color: #FF4301;
-   
     border-radius: 10px;
     
     color: white;
     margin: 0;
     overflow: hidden;
     font-weight: bold;
-    padding: 5px;
+    /* padding: 50px; */
     text-overflow: ellipsis;
     white-space: nowrap;
   }
@@ -54,3 +65,13 @@ select {
     font-size: 12px;
       color: grey;
   }
+
+  .createPost{
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  .post-submit {
+    margin-bottom: 500px;
+  }
+

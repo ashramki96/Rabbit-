@@ -61,6 +61,7 @@ class Post(db.Model):
     user = db.relationship("User", back_populates = "posts")
     comments = db.relationship("Comment", back_populates = "post", cascade = "all, delete-orphan")
     subreddit = db.relationship("Subreddit", back_populates = "posts")
+    likes = db.relationship("Like", back_populates = 'posts', cascade="all, delete-orphan", single_parent=True)
 
     def to_dict(self):
         return {
@@ -71,6 +72,8 @@ class Post(db.Model):
             'subreddit_id': self.subreddit_id,
             'created_at': self.created_at,
             'user': self.user.to_dict() if self.user else None,
+            'likes': [like.to_dict() for like in self.likes] if self.likes else [],
+            'numLikes': len([like.to_dict() for like in self.likes]) if self.likes else 0,
             'subreddit': self.subreddit.to_dict()
             # 'comments': len(self.commments) if self.comments else None
         }
@@ -90,6 +93,7 @@ class Comment(db.Model):
     # likes = db.relationship("Likes", back_populates = "comment", cascade = "all, delete-orphan")
     user = db.relationship("User", back_populates = "comments")
     post = db.relationship("Post", back_populates = "comments")
+    commentlikes = db.relationship("CommentLike", back_populates = 'comments', cascade="all, delete-orphan", single_parent=True)
 
     def to_dict(self):
         return {
@@ -98,11 +102,54 @@ class Comment(db.Model):
             'post_id': self.post_id,
             'user_id': self.user_id,
             'created_at': self.created_at,
-            'user': self.user.to_dict() if self.user else None
+            'user': self.user.to_dict() if self.user else None,
+            'commentlikes': [commentlike.to_dict() for commentlike in self.commentlikes] if self.commentlikes else []
         }
 
-# class Likes(db.Model):
-#     __tablename__ = "likes"
+class Like(db.Model):
+    __tablename__ = "likes"
+
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("posts.id")), nullable=False)
+    like_status = db.Column(db.Boolean, nullable = False)
+
+    users = db.relationship("User", back_populates="likes")
+    posts = db.relationship("Post", back_populates="likes")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'post_id': self.post_id,
+            'like_status': self.like_status
+        }
+        
+
+class CommentLike(db.Model):
+    __tablename__ = "commentlikes"
+
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
+    comment_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("comments.id")), nullable=False)
+    like_status = db.Column(db.Boolean, nullable = False)
+
+    users = db.relationship("User", back_populates="commentlikes")
+    comments = db.relationship("Comment", back_populates="commentlikes")
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'comment_id': self.comment_id,
+            'like_status': self.like_status
+        }
 
 #     if environment == "production":
 #         __table_args__ = {'schema': SCHEMA} 

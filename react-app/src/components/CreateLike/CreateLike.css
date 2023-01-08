@@ -1,0 +1,46 @@
+.Like-container {
+    display: flex;
+    flex-direction: column;
+    /* width: 10%; */
+    align-items: center;
+    padding-top: 25px;
+    margin-left: 3px;
+    
+    /* margin-right: 5px; */
+}
+
+#dark .fa-chevron-up{
+    color: white;
+}
+
+#dark .fa-chevron-up:hover{
+    color: #FF4301;
+}
+
+#light .fa-chevron-up{
+    color: black;
+}
+
+#light .fa-chevron-up:hover{
+    color: #FF4301;
+}
+
+#dark .fa-chevron-down{
+    color: white;
+}
+
+#dark .fa-chevron-down:hover{
+    color: #FF4301;
+}
+
+#light .fa-chevron-down{
+    color: black;
+}
+
+#light .fa-chevron-down:hover{
+    color: #FF4301;
+}
+
+.vote{
+    color: white;
+}

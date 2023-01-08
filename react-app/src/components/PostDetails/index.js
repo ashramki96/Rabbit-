@@ -7,6 +7,8 @@ import { createNewComment, deleteComment, clearAllComments} from '../../store/co
 import "./PostDetails.css"
 import EditComment from '../EditComment';
 import EditPost from '../EditPost';
+import CreateLike from '../CreateLike';
+import CreateCommentLike from '../CreateCommentLike';
 
 const PostDetails = () => {
     const dispatch = useDispatch();
@@ -73,10 +75,11 @@ const PostDetails = () => {
     
 
     return(
-    <div className = "outerPostContainer">
-        
+    <div className = "outerPostDetailsContainer">
+        <div className = "createLikeContainer"><CreateLike post = {post} sessionUser = {sessionUser} /></div>
         <div>
-            <div className="innerPostContainer">
+            
+            <div className="innerPostDetailsContainer">
             <span className = "subredditName">r/{post?.subreddit.name}</span> <span className = "postedBy">posted by u/{post?.user.username}</span>
             <div className = "deleteEditContainer">
                 {sessionUser?.id === post?.user_id ? <div className = "deleteButton" onClick = {() => handlePostDelete(comment?.id)}>Delete</div> : null}
@@ -84,7 +87,7 @@ const PostDetails = () => {
                 </div>
                 <h3>{post?.title}</h3>
                 <div>{post?.text}</div>
-                
+                {/* <CreateLike /> */}
                 <h4>Comments:</h4>
                 
                 {sessionUser ? <form onSubmit={handleCommentSubmit} onChange = {createComment}className = "comment-form">
@@ -97,6 +100,8 @@ const PostDetails = () => {
 
                 {comments.slice(0).reverse().map(comment => {
                     return(
+                        <div className = "OuterCommentContainer">
+                            <div><CreateCommentLike comment = {comment} sessionUser = {sessionUser} /></div>
                         <div className = "innerCommentContainer">
                             <div className = "commentpostedBy">{comment?.user.username}</div>
                             <span className = "commentComment"> {comment?.comment}</span>
@@ -105,6 +110,7 @@ const PostDetails = () => {
                            {sessionUser && sessionUser.id === comment.user_id ? <div className = "deleteButton" onClick = {() => handleCommentDelete(comment?.id)}>Delete</div> : null}
                            {sessionUser && sessionUser.id === comment.user_id ? <div className = "editCommentComponent"><EditComment currComment = {comment}/></div> : null}
                             </div>
+                        </div>
                         </div>
                     )
                 })}

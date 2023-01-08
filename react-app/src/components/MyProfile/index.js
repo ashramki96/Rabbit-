@@ -33,7 +33,7 @@ const MyProfile = () => {
             return (
                 <div>
                     <NavLink key={post.id} to={`/posts/${post.id}`}>
-                        <div className="innerPostContainer">
+                        <div className="innerYourPostContainer">
                         <span className = "subredditName">r/{post?.subreddit.name}</span>
                             <h4>{post.title}</h4>
                             <div>{post.text}</div>
@@ -49,7 +49,7 @@ const MyProfile = () => {
                         <NavLink key={comment.id} to={`/posts/${comment.post_id}`}>
                             <span className = "postTitle">{allPosts.filter(post => comment.post_id === post.id)[0]?.title} </span> 
                             <span className = "subredditNameComment"> r/{allPosts.filter(post => comment.post_id === post.id)[0]?.subreddit.name}</span>
-                            <div className="innerPostContainer">
+                            <div className="innerYourPostContainer">
                                 <div>{comment.comment}</div>
                             </div>
                         </NavLink>

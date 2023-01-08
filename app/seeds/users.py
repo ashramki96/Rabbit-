@@ -71,7 +71,7 @@ def seed_posts():
 
     post2 = Post(
         title = "Will Khabib come back?",
-        text = "Khabib got a little pudge to him right now. Will be come back and fight if Islam loses his next fight? Despite the pudge... ",
+        text = "Khabib got a little pudge to him right now. The lightweight division is stacked at the moment. Will beeb come back and fight if Islam loses his next fight? Despite the pudge... ",
         user_id = 2,
         subreddit_id = 1
     )

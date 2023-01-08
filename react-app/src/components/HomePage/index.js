@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useParams, useHistory } from 'react-router-dom';
 import { loadAllComments} from '../../store/comment';
+import { loadAllLikes } from '../../store/like';
 import { loadAllPosts } from '../../store/post';
+import CreateLike from '../CreateLike';
 import "./HomePage.css"
 
 const HomePage = () => {
@@ -20,7 +22,7 @@ const HomePage = () => {
     console.log("ALL POSTS IS", allPosts)
 
     return (
-        <div>
+        <div className = "all-posts-container">
         {/* <h2 className = "welcome">Welcome to Rabbit!</h2> */}
         {sessionUser ? <div className = "createPostContainer">
          <div className = "createPostButton" onClick = {() => history.push("/createpost")}>Create Post</div>
@@ -29,12 +31,15 @@ const HomePage = () => {
         
                 {allPosts.map(post => {
                     return (
-                        <div>
+                        <div className = "homePostContainer">
+                            <CreateLike post = {post} sessionUser = {sessionUser} />
                             <NavLink key={post.id} to={`/posts/${post.id}`}>
                                 <div className="innerPostContainer">
+                                    
                                     <span className = "subredditName">r/{post.subreddit.name}</span> <span className = "postedBy">Posted by u/{post.user.username}</span>
                                     <h3>{post.title}</h3>
                                     <div>{post.text}</div>
+                                    
                                 </div>
                             </NavLink>
                         </div>
