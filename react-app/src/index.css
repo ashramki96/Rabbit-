@@ -69,10 +69,6 @@ li, a, button, div {
     
 }
 
-
-
-
-
 .submitButton:disabled {
     cursor: not-allowed
 }
