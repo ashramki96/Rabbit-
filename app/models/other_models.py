@@ -20,6 +20,9 @@ subreddits_users = db.Table(
         db.ForeignKey(add_prefix_for_prod("users.id"))
     )
 )
+# for join tables need to add this
+if environment == "production":
+    subreddits_users.schema = SCHEMA
 
 class Subreddit(db.Model):
     __tablename__ = "subreddits"
