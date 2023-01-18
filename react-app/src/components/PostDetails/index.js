@@ -42,8 +42,7 @@ const PostDetails = () => {
 
     const post = allPosts.filter(post => post.id === postId)[0]
     const comments = allComments.filter(comment => comment.post_id === postId)
-    console.log("current post", post)
-    console.log("comments for post", comments)
+  
 
     const createComment = (e) => setComment(e.target.value)
 

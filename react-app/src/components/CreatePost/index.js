@@ -38,20 +38,18 @@ const CreatePost = () => {
 
     const handlePostSubmit = async (e) => {
         e.preventDefault()
-        console.log("is this hitting")
+       
         const postPayload = {
             title,
             text
         }
 
-        console.log("title", title)
-        console.log("text", text)
-        console.log("subredditid", subreddit)
+        
 
         const newPost = await dispatch(createNewPost(postPayload, subreddit, sessionUser.id))
         // .then (() => dispatch(loadAllComments))
         // .then (() => dispatch(loadAllPosts))
-        console.log("this was the created psot", newPost)
+     
         history.push(`/posts/${newPost.id}`)
         
         

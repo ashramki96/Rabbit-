@@ -71,8 +71,7 @@ function CreateCommentLike({comment, sessionUser}){
         // e.preventDefault()
 
         const payload = likeToDelete.id
-        console.log("this is payload", payload)
-        console.log(typeof(payload))
+       
 
         let deletedlike
         deletedlike= await dispatch(deleteLike(payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllComments()))

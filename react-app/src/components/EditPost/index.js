@@ -36,8 +36,7 @@ const EditPost = ({currPost}) => {
             text
         }
 
-        console.log("text payload is", textPayload)
-        console.log("post id is", postId)
+      
 
         await dispatch(editPost(textPayload, postId))
         .then (() => dispatch(loadAllComments))

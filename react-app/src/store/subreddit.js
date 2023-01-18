@@ -15,10 +15,10 @@ const getAllSubreddits = subreddits => ({
 
 export const loadAllSubreddits = () => async dispatch => {
     const response = await csrfFetch('/api/subreddits/')
-    console.log("RESPONSE IS", response)
+   
     if(response.ok){
         const subredditList = await response.json()
-        console.log("SUBREDDIT", subredditList)
+        
         dispatch(getAllSubreddits(subredditList))
     }
 }

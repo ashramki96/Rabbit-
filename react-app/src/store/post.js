@@ -34,10 +34,10 @@ const removePost = postId => ({
 
 export const loadAllPosts = () => async dispatch => {
     const response = await csrfFetch('/api/posts/')
-    console.log("RESPONSE IS", response)
+   
     if(response.ok){
         const postList = await response.json()
-        console.log("POSTLIST", postList)
+        
         dispatch(getAllPosts(postList))
     }
 }
@@ -101,7 +101,7 @@ const postReducer = (state = initialState, action) => {
             newState = {
                 ...state
             }
-            console.log("action payload", action.payload)
+            
             action.payload.Posts.forEach((post) => {
                 newState[post.id] = post
             });

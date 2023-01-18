@@ -15,8 +15,7 @@ const EditComment = ({currComment}) => {
     postId = parseInt(postId)
 
 
-    console.log("edit comment component postid is", postId)
-    console.log("curr comment is !!!! is", currComment)
+    
 
     const [showEditBox, setShowEditBox] = useState(false)
     const [comment, setComment] = useState("")
@@ -33,7 +32,7 @@ const EditComment = ({currComment}) => {
     const handleCommentEdit = async (e) => {
 
         setShowEditBox(false)
-        console.log("hello from handleCommentEdit")
+        
     
         const commentPayload = {
             comment

@@ -19,7 +19,7 @@ const HomePage = () => {
     const allPosts = useSelector(state => Object.values(state.posts))
     const sessionUser = useSelector(state => state.session.user)
     if(!allPosts) return null
-    console.log("ALL POSTS IS", allPosts)
+    
 
     return (
         <div className = "all-posts-container">
