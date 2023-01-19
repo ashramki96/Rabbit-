@@ -44,3 +44,8 @@
 .vote{
     color: white;
 }
+
+.likeButton{
+    background-color: transparent;
+    border: none;
+}

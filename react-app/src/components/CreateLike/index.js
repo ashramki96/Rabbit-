@@ -45,11 +45,12 @@ function CreateLike({post, sessionUser}){
     const likeHandler = async () => {
         // e.preventDefault()
 
+        setDisabled(true)
 
 
         setTimeout(() => {
-            
-        }, 5000)
+            setDisabled(false)
+        }, 1000)
 
 
         const payload = {
@@ -66,11 +67,14 @@ function CreateLike({post, sessionUser}){
        const dislikeHandler = async () => {
         // e.preventDefault()
 
-       
+        setDisabled(true)
+
 
         setTimeout(() => {
-            
-        }, 5000)
+            setDisabled(false)
+        }, 1000)
+
+        
 
         const payload = {
             post_id,
@@ -88,9 +92,12 @@ function CreateLike({post, sessionUser}){
 
         
 
+        setDisabled(true)
+
+
         setTimeout(() => {
-            
-        }, 5000)
+            setDisabled(false)
+        }, 1000)
 
         const payload = likeToDelete.id
        
@@ -108,9 +115,9 @@ function CreateLike({post, sessionUser}){
 
         {/* <div className="likecomment-description-container"> */}
             <div className="Like-container">
-            {likeByUser ? <i class="fa-solid fa-chevron-up"  onClick={() => deleteLikeHandler(likeByUser)}/>: <i id = "post-vote" class="fa-solid fa-chevron-up"  onClick={() => likeHandler()}/>}
+            {likeByUser ? <button className = "likeButton" disabled = {disabled} onClick={() => deleteLikeHandler(likeByUser)}><i class="fa-solid fa-chevron-up"/></button>: <button className = "likeButton" disabled = {disabled} onClick={() => likeHandler()}><i id = "post-vote" class="fa-solid fa-chevron-up"/></button>}
             <div className="vote">{numberLikes}</div>
-            {dislikeByUser ? <i class="fa-solid fa-chevron-down"  onClick={() => deleteLikeHandler(dislikeByUser)}/>:  <i id = "post-vote" class="fa-solid fa-chevron-down"  onClick={() => dislikeHandler()}/>}
+            {dislikeByUser ? <button className = "likeButton" disabled = {disabled} onClick={() => deleteLikeHandler(dislikeByUser)}><i class="fa-solid fa-chevron-down" /></button>:  <button className = "likeButton" disabled = {disabled} onClick={() => dislikeHandler()}><i id = "post-vote" class="fa-solid fa-chevron-down"/></button>}
             </div>
         {/* </div> */}
         </>
