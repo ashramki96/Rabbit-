@@ -9,6 +9,7 @@ import "./CreateCommentLike.css"
 
 function CreateCommentLike({comment, sessionUser}){
     const dispatch = useDispatch()
+    const [disabled, setDisabled] = useState(true)
     let commentLikes = comment?.commentlikes
     // useEffect(() => {
     //     dispatch(loadAllPosts())
@@ -42,6 +43,12 @@ function CreateCommentLike({comment, sessionUser}){
     const likeHandler = async () => {
         // e.preventDefault()
 
+        setDisabled(false)
+
+        setTimeout(() => {
+            setDisabled(true)
+        }, 1000)
+
         const payload = {
             comment_id,
             user_id,
@@ -56,6 +63,12 @@ function CreateCommentLike({comment, sessionUser}){
        const dislikeHandler = async () => {
         // e.preventDefault()
 
+        setDisabled(false)
+
+        setTimeout(() => {
+            setDisabled(true)
+        }, 1000)
+
         const payload = {
             comment_id,
             user_id,
@@ -69,6 +82,12 @@ function CreateCommentLike({comment, sessionUser}){
 
        const deleteLikeHandler = async (likeToDelete) => {
         // e.preventDefault()
+
+        setDisabled(false)
+
+        setTimeout(() => {
+            setDisabled(true)
+        }, 1000)
 
         const payload = likeToDelete.id
        
@@ -86,9 +105,9 @@ function CreateCommentLike({comment, sessionUser}){
 
         {/* <div className="likecomment-description-container"> */}
             <div className="Like-container">
-            {likeByUser ? <i id = "post-vote" class="fa-solid fa-chevron-up" onClick={() => deleteLikeHandler(likeByUser)}/>: <i id = "post-vote" class="fa-solid fa-chevron-up" onClick={() => likeHandler()}/>}
+            {likeByUser ? <i id = "post-vote" class="fa-solid fa-chevron-up" disabled = {disabled} onClick={() => deleteLikeHandler(likeByUser)}/>: <i id = "post-vote" class="fa-solid fa-chevron-up" disabled = {disabled} onClick={() => likeHandler()}/>}
             <div id = "comment-vote" className="likes">{numberLikes}</div>
-            {dislikeByUser ? <i id = "post-vote" class="fa-solid fa-chevron-down" onClick={() => deleteLikeHandler(dislikeByUser)} /> :  <i id = "post-vote" class="fa-solid fa-chevron-down" onClick={() => dislikeHandler()}/>}
+            {dislikeByUser ? <i id = "post-vote" class="fa-solid fa-chevron-down" disabled = {disabled} onClick={() => deleteLikeHandler(dislikeByUser)} /> :  <i id = "post-vote" class="fa-solid fa-chevron-down" disabled = {disabled} onClick={() => dislikeHandler()}/>}
             </div>
         {/* </div> */}
         </>
