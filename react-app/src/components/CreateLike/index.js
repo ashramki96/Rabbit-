@@ -48,9 +48,9 @@ function CreateLike({post, sessionUser}){
         setDisabled(true)
 
 
-        setTimeout(() => {
-            setDisabled(false)
-        }, 1000)
+        // setTimeout(() => {
+        //     setDisabled(false)
+        // }, 1000)
 
 
         const payload = {
@@ -60,8 +60,11 @@ function CreateLike({post, sessionUser}){
         }
 
         let like
-        like = await dispatch(createNewLike(post_id, user_id, payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts()))
+        like = await dispatch(createNewLike(post_id, user_id, payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts())).then(()=>setDisabled(false))
 
+        // setTimeout(() => {
+        //     setDisabled(false)
+        // }, 1000)
        }
 
        const dislikeHandler = async () => {
@@ -70,9 +73,7 @@ function CreateLike({post, sessionUser}){
         setDisabled(true)
 
 
-        setTimeout(() => {
-            setDisabled(false)
-        }, 1000)
+      
 
         
 
@@ -83,8 +84,11 @@ function CreateLike({post, sessionUser}){
         }
 
         let like
-        like = await dispatch(createNewLike(post_id, user_id, payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts()))
+        like = await dispatch(createNewLike(post_id, user_id, payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts())).then(()=>setDisabled(false))
 
+        // setTimeout(() => {
+        //     setDisabled(false)
+        // }, 1000)
        }
 
        const deleteLikeHandler = async (likeToDelete) => {
@@ -95,16 +99,18 @@ function CreateLike({post, sessionUser}){
         setDisabled(true)
 
 
-        setTimeout(() => {
-            setDisabled(false)
-        }, 1000)
+      
 
         const payload = likeToDelete.id
        
 
         let deletedlike
-        deletedlike= await dispatch(deleteLike(payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts()))
-       }
+        deletedlike= await dispatch(deleteLike(payload)).then(()=>dispatch(loadAllLikes())).then(()=>dispatch(loadAllPosts())).then(()=>setDisabled(false))
+        
+        //   setTimeout(() => {
+        //     setDisabled(false)
+        // }, 1000)
+    }
 
     return(
         <>
