@@ -118,7 +118,7 @@ class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("posts.id")), nullable=False)
-    like_status = db.Column(db.Boolean, nullable = False)
+    like_status = db.Column(db.Integer, nullable = False)
 
     users = db.relationship("User", back_populates="likes")
     posts = db.relationship("Post", back_populates="likes")
@@ -141,7 +141,7 @@ class CommentLike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")), nullable=False)
     comment_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("comments.id")), nullable=False)
-    like_status = db.Column(db.Boolean, nullable = False)
+    like_status = db.Column(db.Integer, nullable = False)
 
     users = db.relationship("User", back_populates="commentlikes")
     comments = db.relationship("Comment", back_populates="commentlikes")

@@ -70,7 +70,7 @@ function Navigation({ isLoaded, theme, toggleTheme}){
     <div className="navbar-main">
       <div className="navbar-inner-container">
     <div className= "Home-Container">
-        <NavLink exact to="/"><i class="fa-3x fa-brands fa-reddit-alien"></i></NavLink>
+        <NavLink exact to="/"><i class="fa-2x fa-brands fa-reddit-alien"></i></NavLink>
     </div>
 
     <div className="Right-Side-Container">

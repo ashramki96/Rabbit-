@@ -32,6 +32,11 @@ margin-right: -8px;
     margin-right: -8px;
 }
 
+#dark .rabbit{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
 .navbar-inner-container{
     display: flex;
     flex-direction: row;
