@@ -36,7 +36,7 @@ function CreateLike({post, sessionUser}){
     const allDislikes = postLikeArray?.filter(like => like && like.like_status === -1)
     let numberLikes = 0
 
-    for (let i = 0; i< postLikeArray.length; i++){
+    for (let i = 0; i< postLikeArray?.length; i++){
         numberLikes = numberLikes + postLikeArray[i].like_status
     }
 

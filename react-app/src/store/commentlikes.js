@@ -9,14 +9,17 @@ import {
 const GET_ALLLIKES = 'comments/getAllLikes'
 const CREATE_LIKE = 'comments/createLike'
 const DELETE_LIKE = 'comments/removeLike'
-
+const UPDATE_LIKE = 'posts/editLike'
 
 const getAllLikes = like => ({
     type: GET_ALLLIKES,
     payload: like
 })
 
-
+const editALike = like => ({
+    type: UPDATE_LIKE,
+    payload: like
+})
 
 const createLike = like => ({
     type: CREATE_LIKE,
@@ -79,13 +82,30 @@ export const deleteLike = (likeId) => async dispatch => {
     }
 }
 
+//*************************************************************************** */
+
+export const editLike = (likeId, payload) => async dispatch => {
+    const response = await csrfFetch(`/api/commentlikes/${likeId}/`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    }) 
+
+    if(response.ok){
+        const editedLike = await response.json();
+        dispatch(editALike(editedLike))
+        return editedLike
+    }
+}
 
 
 // ******************************* REDUCERS ************************************
 
 const initialState = {}
 
-const likesReducer = (state = initialState, action) => {
+const commentlikesReducer = (state = initialState, action) => {
 
     let newState;
     switch (action.type) {
@@ -105,7 +125,14 @@ const likesReducer = (state = initialState, action) => {
             }
             newState[action.payload.id] = action.payload
             return newState
-          
+        
+        case UPDATE_LIKE:
+            newState = {
+                 ...state
+            }
+            newState[action.payload.id] = action.payload
+            return newState 
+
         case DELETE_LIKE:
             newState = {
                 ...state
@@ -121,4 +148,4 @@ const likesReducer = (state = initialState, action) => {
 }
 
 
-export default likesReducer
+export default commentlikesReducer
